@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsData
 {
-    class Products_DB
+    public static class Products_DB
     {
+        public static List<Products> GetProducts()
+        {
+            List<Products> prodcuts = new List<Products>();
+            Products prod;
+        }
     }
 }
