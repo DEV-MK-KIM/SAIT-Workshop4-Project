@@ -10,8 +10,11 @@ namespace TravelExpertsData
     {
         public static List<Products> GetProducts()
         {
-            List<Products> prodcuts = new List<Products>();
+            List<Products> products = new List<Products>();
             Products prod;
+
+            return products;
+            // hello world
         }
     }
 }
