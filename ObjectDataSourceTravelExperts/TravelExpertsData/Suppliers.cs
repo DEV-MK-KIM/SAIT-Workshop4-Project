@@ -8,7 +8,7 @@ namespace TravelExpertsData
 {
     public class Suppliers
     {
-        public int SupplierID { get; set; } // primary key, auto increment
+        public int SupplierID { get; set; } // primary key, non-auto increment
         public string SupName { get; set; } // null
     }
 }

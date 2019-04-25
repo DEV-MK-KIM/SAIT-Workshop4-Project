@@ -8,7 +8,7 @@ namespace TravelExpertsData
 {
     public class Packages
     {
-        public int PackageID { get; set; } // Primary Key
+        public int PackageID { get; set; } // Primary Key, auto increment
         public string PkgName { get; set; } // not null
         public DateTime? PkgStartDate { get; set; } // null
         public DateTime? PkgEndDate { get; set; } // null
