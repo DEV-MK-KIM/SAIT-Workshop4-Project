@@ -40,6 +40,7 @@ namespace TravelExpertsData
                         // packages
 
                     }
+                    
 
 
                 }
@@ -54,6 +55,52 @@ namespace TravelExpertsData
 
                 return packages;
         }
+
+        public static Packages GetPackages(int pkgID)
+        {
+            Packages pkg = null;
+
+            // create connection
+            SqlConnection connection = TravelExperts_DB.GetConnection();
+
+            //  create SELECT command
+            string query = "SELECT CustomerID, Name, Address, City, State, ZipCode " + "FROM Customers " + "WHERE CustomerID = @CustomerID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            // supply perameter value after you have your command
+            cmd.Parameters.AddWithValue("@CustomerID", custID);
+
+            // run SELECT query
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleRow);
+
+                //build customer object to return
+                if (reader.Read()) // if there is a customer with this ID
+                {
+                    cust = new Customer();
+                    cust.CustomerID = (int)reader["CustomerID"];
+                    cust.Name = reader["Name"].ToString();
+                    cust.Address = reader["Address"].ToString();
+                    cust.City = reader["City"].ToString();
+                    cust.State = reader["State"].ToString();
+                    cust.ZipCode = reader["ZipCode"].ToString();
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return cust;
+        }
+    }
             
             
           
