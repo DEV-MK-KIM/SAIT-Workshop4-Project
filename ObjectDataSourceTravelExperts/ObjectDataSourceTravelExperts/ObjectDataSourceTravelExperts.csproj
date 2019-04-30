@@ -52,6 +52,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPackageUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPackageUpdate.Designer.cs">
+      <DependentUpon>frmPackageUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
