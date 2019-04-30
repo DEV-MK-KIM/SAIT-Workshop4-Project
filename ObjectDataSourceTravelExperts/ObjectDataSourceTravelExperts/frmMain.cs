@@ -25,7 +25,7 @@ namespace ObjectDataSourceTravelExperts
         private void frmMain_Load(object sender, EventArgs e)
         {
             
-            packages = Packages_DB.GetPackages();
+            packages = Packages_DB.GetAllPackages();
             packagesDataGridView.DataSource = packages;
 
             //Suppliers 
@@ -54,6 +54,11 @@ namespace ObjectDataSourceTravelExperts
                     suppliersDataGridView.DataSource = suppliers;
                 }
             }
+        }
+
+        private void packagesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
