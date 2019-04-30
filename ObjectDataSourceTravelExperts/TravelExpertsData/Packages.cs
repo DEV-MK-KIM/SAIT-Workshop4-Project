@@ -16,8 +16,7 @@ namespace TravelExpertsData
         public decimal PkgBasePrice { get; set; } // not null
         public decimal? PkgAgencyCommission { get; set; } // null
 
-        // test dingli1
-        //test dingli2
+
 
 
     }
