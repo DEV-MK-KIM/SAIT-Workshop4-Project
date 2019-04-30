@@ -58,10 +58,19 @@
     <Compile Include="frmPackageUpdate.Designer.cs">
       <DependentUpon>frmPackageUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSupplierUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupplierUpdate.Designer.cs">
+      <DependentUpon>frmSupplierUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupplierUpdate.resx">
+      <DependentUpon>frmSupplierUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -73,6 +82,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\DataSources\TravelExpertsData.Packages.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.Suppliers.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

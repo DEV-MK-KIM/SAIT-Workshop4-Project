@@ -10,5 +10,20 @@ namespace TravelExpertsData
     {
         public int SupplierID { get; set; } // primary key, non-auto increment
         public string SupName { get; set; } // null
+
+        /// <summary>
+        /// Clone the object of Suppliers
+        /// </summary>
+        /// <returns>copy of supplier object </returns>
+        public Suppliers Clone()
+        {
+            Suppliers copy = new Suppliers();
+            copy.SupplierID = SupplierID;
+            copy.SupName = SupName;
+           
+
+            return copy;
+
+        }
     }
 }
