@@ -35,6 +35,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +83,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 156);
+            this.label5.Location = new System.Drawing.Point(39, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 13);
             this.label5.TabIndex = 4;
@@ -85,7 +92,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 199);
+            this.label6.Location = new System.Drawing.Point(39, 238);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 5;
@@ -94,17 +101,73 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 240);
+            this.label7.Location = new System.Drawing.Point(39, 270);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(126, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Pkg Agency Commission:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(136, 127);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 7;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(136, 98);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(136, 66);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(245, 20);
+            this.textBox1.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(135, 27);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(93, 20);
+            this.textBox2.TabIndex = 10;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(162, 220);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(245, 20);
+            this.textBox3.TabIndex = 11;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(182, 263);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(245, 20);
+            this.textBox4.TabIndex = 12;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(162, 185);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(245, 20);
+            this.textBox5.TabIndex = 13;
             // 
             // frmPackageUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -129,5 +192,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
