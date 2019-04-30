@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TravelExpertsData
-{
+{// Author: Lee Neufeld
     public static class Packages_DB
     {
         public static List<Packages> GetAllPackages()

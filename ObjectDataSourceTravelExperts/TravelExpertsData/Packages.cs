@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TravelExpertsData
-{
+{//Author: Lee Neufeld
     public class Packages
     {
         public int PackageID { get; set; } // Primary Key, auto increment

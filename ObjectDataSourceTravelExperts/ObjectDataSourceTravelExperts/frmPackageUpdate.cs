@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using TravelExpertsData;
 
 namespace ObjectDataSourceTravelExperts
-{
+{// Author: Lee Neufeld
     public partial class frmPackageUpdate : Form
     {
         public Packages package;
