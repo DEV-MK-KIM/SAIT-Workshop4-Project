@@ -17,5 +17,19 @@ namespace TravelExpertsData
         public decimal? PkgAgencyCommission { get; set; } // null
 
 
+   
+    public Packages Clone()
+    {
+        Packages copy = new Packages();
+        copy.PackageID = this.PackageID;
+        copy.PkgName = this.PkgName;
+        copy.PkgStartDate = this.PkgStartDate;
+        copy.PkgEndDate = this.PkgEndDate;
+        copy.PkgDesc = this.PkgDesc;
+        copy.PkgBasePrice = this.PkgBasePrice;
+        copy.PkgAgencyCommission = this.PkgAgencyCommission;
+
+            return copy;
+    }
     }
 }
