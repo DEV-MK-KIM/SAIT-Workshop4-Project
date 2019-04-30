@@ -170,7 +170,7 @@
             // 
             // btnAddPkg
             // 
-            this.btnAddPkg.Location = new System.Drawing.Point(850, 153);
+            this.btnAddPkg.Location = new System.Drawing.Point(658, 150);
             this.btnAddPkg.Name = "btnAddPkg";
             this.btnAddPkg.Size = new System.Drawing.Size(61, 23);
             this.btnAddPkg.TabIndex = 2;
