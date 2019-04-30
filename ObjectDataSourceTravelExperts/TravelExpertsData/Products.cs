@@ -10,5 +10,7 @@ namespace TravelExpertsData
     {
         public int ProductID { get; set; } // primary key, auto increment
         public string ProdName { get; set; } // not null
+
+        // changes by mohamed
     }
 }
