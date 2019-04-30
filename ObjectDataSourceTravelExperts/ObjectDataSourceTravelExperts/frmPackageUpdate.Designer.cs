@@ -28,156 +28,203 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label packageIDLabel;
+            System.Windows.Forms.Label pkgAgencyCommissionLabel;
+            System.Windows.Forms.Label pkgBasePriceLabel;
+            System.Windows.Forms.Label pkgDescLabel;
+            System.Windows.Forms.Label pkgEndDateLabel;
+            System.Windows.Forms.Label pkgNameLabel;
+            System.Windows.Forms.Label pkgStartDateLabel;
+            this.packagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.packageIDTextBox = new System.Windows.Forms.TextBox();
+            this.pkgAgencyCommissionTextBox = new System.Windows.Forms.TextBox();
+            this.pkgBasePriceTextBox = new System.Windows.Forms.TextBox();
+            this.pkgDescTextBox = new System.Windows.Forms.TextBox();
+            this.pkgEndDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.pkgNameTextBox = new System.Windows.Forms.TextBox();
+            this.pkgStartDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.btnAccept = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            packageIDLabel = new System.Windows.Forms.Label();
+            pkgAgencyCommissionLabel = new System.Windows.Forms.Label();
+            pkgBasePriceLabel = new System.Windows.Forms.Label();
+            pkgDescLabel = new System.Windows.Forms.Label();
+            pkgEndDateLabel = new System.Windows.Forms.Label();
+            pkgNameLabel = new System.Windows.Forms.Label();
+            pkgStartDateLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // packagesBindingSource
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PackageID:";
+            this.packagesBindingSource.DataSource = typeof(TravelExpertsData.Packages);
             // 
-            // label2
+            // packageIDLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "PkgName:";
+            packageIDLabel.AutoSize = true;
+            packageIDLabel.Location = new System.Drawing.Point(37, 58);
+            packageIDLabel.Name = "packageIDLabel";
+            packageIDLabel.Size = new System.Drawing.Size(67, 13);
+            packageIDLabel.TabIndex = 1;
+            packageIDLabel.Text = "Package ID:";
             // 
-            // label3
+            // packageIDTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Pkg Start Date:";
+            this.packageIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PackageID", true));
+            this.packageIDTextBox.Enabled = false;
+            this.packageIDTextBox.Location = new System.Drawing.Point(169, 55);
+            this.packageIDTextBox.Name = "packageIDTextBox";
+            this.packageIDTextBox.Size = new System.Drawing.Size(200, 20);
+            this.packageIDTextBox.TabIndex = 2;
             // 
-            // label4
+            // pkgAgencyCommissionLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 127);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Pkg End Date:";
+            pkgAgencyCommissionLabel.AutoSize = true;
+            pkgAgencyCommissionLabel.Location = new System.Drawing.Point(37, 84);
+            pkgAgencyCommissionLabel.Name = "pkgAgencyCommissionLabel";
+            pkgAgencyCommissionLabel.Size = new System.Drawing.Size(126, 13);
+            pkgAgencyCommissionLabel.TabIndex = 3;
+            pkgAgencyCommissionLabel.Text = "Pkg Agency Commission:";
             // 
-            // label5
+            // pkgAgencyCommissionTextBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 192);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Pkg Description:";
+            this.pkgAgencyCommissionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgAgencyCommission", true));
+            this.pkgAgencyCommissionTextBox.Location = new System.Drawing.Point(169, 81);
+            this.pkgAgencyCommissionTextBox.Name = "pkgAgencyCommissionTextBox";
+            this.pkgAgencyCommissionTextBox.Size = new System.Drawing.Size(200, 20);
+            this.pkgAgencyCommissionTextBox.TabIndex = 4;
             // 
-            // label6
+            // pkgBasePriceLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 238);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Pkg Base Price:";
+            pkgBasePriceLabel.AutoSize = true;
+            pkgBasePriceLabel.Location = new System.Drawing.Point(37, 110);
+            pkgBasePriceLabel.Name = "pkgBasePriceLabel";
+            pkgBasePriceLabel.Size = new System.Drawing.Size(83, 13);
+            pkgBasePriceLabel.TabIndex = 5;
+            pkgBasePriceLabel.Text = "Pkg Base Price:";
             // 
-            // label7
+            // pkgBasePriceTextBox
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 270);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Pkg Agency Commission:";
+            this.pkgBasePriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgBasePrice", true));
+            this.pkgBasePriceTextBox.Location = new System.Drawing.Point(169, 107);
+            this.pkgBasePriceTextBox.Name = "pkgBasePriceTextBox";
+            this.pkgBasePriceTextBox.Size = new System.Drawing.Size(200, 20);
+            this.pkgBasePriceTextBox.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // pkgDescLabel
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(136, 127);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            pkgDescLabel.AutoSize = true;
+            pkgDescLabel.Location = new System.Drawing.Point(37, 136);
+            pkgDescLabel.Name = "pkgDescLabel";
+            pkgDescLabel.Size = new System.Drawing.Size(57, 13);
+            pkgDescLabel.TabIndex = 7;
+            pkgDescLabel.Text = "Pkg Desc:";
             // 
-            // dateTimePicker2
+            // pkgDescTextBox
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(136, 98);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 8;
+            this.pkgDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgDesc", true));
+            this.pkgDescTextBox.Location = new System.Drawing.Point(169, 133);
+            this.pkgDescTextBox.Name = "pkgDescTextBox";
+            this.pkgDescTextBox.Size = new System.Drawing.Size(200, 20);
+            this.pkgDescTextBox.TabIndex = 8;
             // 
-            // textBox1
+            // pkgEndDateLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 20);
-            this.textBox1.TabIndex = 9;
+            pkgEndDateLabel.AutoSize = true;
+            pkgEndDateLabel.Location = new System.Drawing.Point(37, 163);
+            pkgEndDateLabel.Name = "pkgEndDateLabel";
+            pkgEndDateLabel.Size = new System.Drawing.Size(77, 13);
+            pkgEndDateLabel.TabIndex = 9;
+            pkgEndDateLabel.Text = "Pkg End Date:";
             // 
-            // textBox2
+            // pkgEndDateDateTimePicker
             // 
-            this.textBox2.Location = new System.Drawing.Point(135, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(93, 20);
-            this.textBox2.TabIndex = 10;
+            this.pkgEndDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgEndDate", true));
+            this.pkgEndDateDateTimePicker.Location = new System.Drawing.Point(169, 159);
+            this.pkgEndDateDateTimePicker.Name = "pkgEndDateDateTimePicker";
+            this.pkgEndDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.pkgEndDateDateTimePicker.TabIndex = 10;
             // 
-            // textBox3
+            // pkgNameLabel
             // 
-            this.textBox3.Location = new System.Drawing.Point(162, 220);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 20);
-            this.textBox3.TabIndex = 11;
+            pkgNameLabel.AutoSize = true;
+            pkgNameLabel.Location = new System.Drawing.Point(37, 188);
+            pkgNameLabel.Name = "pkgNameLabel";
+            pkgNameLabel.Size = new System.Drawing.Size(60, 13);
+            pkgNameLabel.TabIndex = 11;
+            pkgNameLabel.Text = "Pkg Name:";
             // 
-            // textBox4
+            // pkgNameTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(182, 263);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(245, 20);
-            this.textBox4.TabIndex = 12;
+            this.pkgNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgName", true));
+            this.pkgNameTextBox.Location = new System.Drawing.Point(169, 185);
+            this.pkgNameTextBox.Name = "pkgNameTextBox";
+            this.pkgNameTextBox.Size = new System.Drawing.Size(200, 20);
+            this.pkgNameTextBox.TabIndex = 12;
             // 
-            // textBox5
+            // pkgStartDateLabel
             // 
-            this.textBox5.Location = new System.Drawing.Point(162, 185);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(245, 20);
-            this.textBox5.TabIndex = 13;
+            pkgStartDateLabel.AutoSize = true;
+            pkgStartDateLabel.Location = new System.Drawing.Point(37, 215);
+            pkgStartDateLabel.Name = "pkgStartDateLabel";
+            pkgStartDateLabel.Size = new System.Drawing.Size(80, 13);
+            pkgStartDateLabel.TabIndex = 13;
+            pkgStartDateLabel.Text = "Pkg Start Date:";
+            // 
+            // pkgStartDateDateTimePicker
+            // 
+            this.pkgStartDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgStartDate", true));
+            this.pkgStartDateDateTimePicker.Location = new System.Drawing.Point(169, 211);
+            this.pkgStartDateDateTimePicker.Name = "pkgStartDateDateTimePicker";
+            this.pkgStartDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.pkgStartDateDateTimePicker.TabIndex = 14;
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Location = new System.Drawing.Point(54, 268);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(115, 33);
+            this.btnAccept.TabIndex = 15;
+            this.btnAccept.Text = "Accept";
+            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(211, 268);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(115, 33);
+            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmPackageUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(437, 343);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAccept);
+            this.Controls.Add(packageIDLabel);
+            this.Controls.Add(this.packageIDTextBox);
+            this.Controls.Add(pkgAgencyCommissionLabel);
+            this.Controls.Add(this.pkgAgencyCommissionTextBox);
+            this.Controls.Add(pkgBasePriceLabel);
+            this.Controls.Add(this.pkgBasePriceTextBox);
+            this.Controls.Add(pkgDescLabel);
+            this.Controls.Add(this.pkgDescTextBox);
+            this.Controls.Add(pkgEndDateLabel);
+            this.Controls.Add(this.pkgEndDateDateTimePicker);
+            this.Controls.Add(pkgNameLabel);
+            this.Controls.Add(this.pkgNameTextBox);
+            this.Controls.Add(pkgStartDateLabel);
+            this.Controls.Add(this.pkgStartDateDateTimePicker);
             this.Name = "frmPackageUpdate";
             this.Text = "frmPackageUpdate";
             this.Load += new System.EventHandler(this.frmPackageUpdate_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,19 +232,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.BindingSource packagesBindingSource;
+        private System.Windows.Forms.TextBox packageIDTextBox;
+        private System.Windows.Forms.TextBox pkgAgencyCommissionTextBox;
+        private System.Windows.Forms.TextBox pkgBasePriceTextBox;
+        private System.Windows.Forms.TextBox pkgDescTextBox;
+        private System.Windows.Forms.DateTimePicker pkgEndDateDateTimePicker;
+        private System.Windows.Forms.TextBox pkgNameTextBox;
+        private System.Windows.Forms.DateTimePicker pkgStartDateDateTimePicker;
+        private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
