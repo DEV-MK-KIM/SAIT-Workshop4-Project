@@ -13,18 +13,72 @@ namespace ObjectDataSourceTravelExperts
 {
     public partial class frmMain : Form
     {
+        const int EDIT_SUPPLIER_INDEX = 2 ; // index number of edit column in supplier table
+        const int EDIT_PACKAGES_INDX = 7;
+
         public frmMain()
         {
             InitializeComponent();
         }
 
         List<Packages> packages = null;
+        List<Suppliers> suppliers = null;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            packages = Packages_DB.GetPackages();
+            
+            packages = Packages_DB.GetAllPackages();
             packagesDataGridView.DataSource = packages;
-            // comment test 2
+
+            //Suppliers 
+            suppliers = Suppliers_DB.GetSuppliers();
+            suppliersDataGridView.DataSource = suppliers;
+            
+
+        }
+
+        private void suppliersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == EDIT_SUPPLIER_INDEX)
+            {
+                frmSuppliersUpdate updateSupplierForm = new frmSuppliersUpdate();
+                updateSupplierForm.supplier = suppliers[e.RowIndex]; // pass current customer to the update form
+                DialogResult result = updateSupplierForm.ShowDialog(); // display modal
+
+                if (result == DialogResult.OK)
+                {
+                    CurrencyManager cm = (CurrencyManager)suppliersDataGridView.BindingContext[suppliers];
+                    cm.Refresh();
+                }
+                else
+                {
+                    suppliers = Suppliers_DB.GetSuppliers();
+                    suppliersDataGridView.DataSource = suppliers;
+                }
+            }
+        }
+
+        private void packagesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == EDIT_PACKAGES_INDX)// user click in the buttons column
+            {
+                //oldCustomer = customers[e.RowIndex].Clone(); // copy of current customer
+                frmPackageUpdate updateForm = new frmPackageUpdate();
+                updateForm.package = packages[e.RowIndex];// pass current customer to the update form
+                DialogResult result = updateForm.ShowDialog(); // display modal
+                if (result == DialogResult.OK)// update accepted
+                {
+                    // refresh the grid contents
+                    CurrencyManager cm = (CurrencyManager)packagesDataGridView.BindingContext[packages];
+                    cm.Refresh();
+                }
+                else // update cancelled
+                {
+                    //customers[e.RowIndex] = oldCustomer;
+                    packages = Packages_DB.GetAllPackages();
+                    packagesDataGridView.DataSource = packages;
+                }
+            }
         }
 
     }
