@@ -77,7 +77,7 @@ namespace TravelExpertsData
         }
 
         public static int AddSupplier(Suppliers sup)
-        {
+        { 
             int supID = 0;
 
             // create connection
