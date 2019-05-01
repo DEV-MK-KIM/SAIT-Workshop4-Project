@@ -37,8 +37,27 @@ namespace ObjectDataSourceTravelExperts
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-         // added accept function  
-         // cooment2
+            try
+            {
+                bool success = Suppliers_DB.UpdateSuppliers(supplier, oldSupplier);
+                if (success)
+                {
+                    MessageBox.Show("Update successful", "Success");
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Another user updated or deleted this record. Try again.",
+                                     "Concurrency problem");
+                    this.DialogResult = DialogResult.Retry; // closes the form
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during update: " + ex.Message,
+                    ex.GetType().ToString());
+                //this.DialogResult = DialogResult.Retry;
+            }
         }
     }
 }

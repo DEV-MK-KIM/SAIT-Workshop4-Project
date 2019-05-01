@@ -45,7 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAddPkg = new System.Windows.Forms.Button();
             this.groupSuppliers = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSupAdd = new System.Windows.Forms.Button();
             this.suppliersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -179,7 +179,7 @@
             // 
             // groupSuppliers
             // 
-            this.groupSuppliers.Controls.Add(this.button1);
+            this.groupSuppliers.Controls.Add(this.btnSupAdd);
             this.groupSuppliers.Controls.Add(this.suppliersDataGridView);
             this.groupSuppliers.Location = new System.Drawing.Point(468, 240);
             this.groupSuppliers.Name = "groupSuppliers";
@@ -188,14 +188,15 @@
             this.groupSuppliers.TabStop = false;
             this.groupSuppliers.Text = "Suppliers";
             // 
-            // button1
+            // btnSupAdd
             // 
-            this.button1.Location = new System.Drawing.Point(394, 295);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "&Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSupAdd.Location = new System.Drawing.Point(394, 295);
+            this.btnSupAdd.Name = "btnSupAdd";
+            this.btnSupAdd.Size = new System.Drawing.Size(61, 23);
+            this.btnSupAdd.TabIndex = 3;
+            this.btnSupAdd.Text = "&Add";
+            this.btnSupAdd.UseVisualStyleBackColor = true;
+            this.btnSupAdd.Click += new System.EventHandler(this.btnSupAdd_Click);
             // 
             // suppliersDataGridView
             // 
@@ -327,7 +328,7 @@
         private System.Windows.Forms.GroupBox groupProducts;
         private System.Windows.Forms.DataGridView suppliersDataGridView;
         private System.Windows.Forms.BindingSource suppliersBindingSource;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSupAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewButtonColumn Update;

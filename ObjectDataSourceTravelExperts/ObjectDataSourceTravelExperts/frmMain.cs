@@ -23,6 +23,7 @@ namespace ObjectDataSourceTravelExperts
 
         List<Packages> packages = null;
         List<Suppliers> suppliers = null;
+        Suppliers supplier;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -80,6 +81,20 @@ namespace ObjectDataSourceTravelExperts
                 }
             }
         }
+        
+        private void btnSupAdd_Click(object sender, EventArgs e)
+        {
+            frmSuppliersAdd addSupplierForm = new frmSuppliersAdd();
+            addSupplierForm.addSupplier = true;
+            DialogResult result = addSupplierForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                supplier = addSupplierForm.supplier;
+              
+            }
+        }
 
+       
+        
     }
 }

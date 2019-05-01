@@ -44,16 +44,16 @@
             // supNameLabel
             // 
             supNameLabel.AutoSize = true;
-            supNameLabel.Location = new System.Drawing.Point(21, 15);
+            supNameLabel.Location = new System.Drawing.Point(32, 50);
             supNameLabel.Name = "supNameLabel";
-            supNameLabel.Size = new System.Drawing.Size(60, 13);
+            supNameLabel.Size = new System.Drawing.Size(79, 13);
             supNameLabel.TabIndex = 1;
-            supNameLabel.Text = "Sup Name:";
+            supNameLabel.Text = "Supplier Name:";
             // 
             // supplierIDLabel
             // 
             supplierIDLabel.AutoSize = true;
-            supplierIDLabel.Location = new System.Drawing.Point(21, 41);
+            supplierIDLabel.Location = new System.Drawing.Point(49, 24);
             supplierIDLabel.Name = "supplierIDLabel";
             supplierIDLabel.Size = new System.Drawing.Size(62, 13);
             supplierIDLabel.TabIndex = 3;
@@ -66,22 +66,23 @@
             // txtSupName
             // 
             this.txtSupName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupName", true));
-            this.txtSupName.Location = new System.Drawing.Point(89, 12);
+            this.txtSupName.Location = new System.Drawing.Point(117, 47);
             this.txtSupName.Name = "txtSupName";
-            this.txtSupName.Size = new System.Drawing.Size(100, 20);
+            this.txtSupName.Size = new System.Drawing.Size(176, 20);
             this.txtSupName.TabIndex = 2;
             // 
             // supplierIDTextBox
             // 
             this.supplierIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupplierID", true));
-            this.supplierIDTextBox.Location = new System.Drawing.Point(89, 38);
+            this.supplierIDTextBox.Location = new System.Drawing.Point(117, 21);
             this.supplierIDTextBox.Name = "supplierIDTextBox";
+            this.supplierIDTextBox.ReadOnly = true;
             this.supplierIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.supplierIDTextBox.TabIndex = 4;
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(33, 95);
+            this.btnAccept.Location = new System.Drawing.Point(117, 82);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 5;
@@ -91,7 +92,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(130, 95);
+            this.btnCancel.Location = new System.Drawing.Point(218, 82);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
@@ -103,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 135);
+            this.ClientSize = new System.Drawing.Size(373, 135);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(supNameLabel);
