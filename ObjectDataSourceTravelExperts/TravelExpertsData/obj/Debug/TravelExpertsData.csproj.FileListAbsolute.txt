@@ -20,3 +20,9 @@ C:\Users\823721\Source\Repos\SAIT-Workshop4-Project\ObjectDataSourceTravelExpert
 C:\Users\823721\Source\Repos\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.csproj.CoreCompileInputs.cache
 C:\Users\823721\Source\Repos\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.dll
 C:\Users\823721\Source\Repos\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.pdb
+C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\bin\Debug\TravelExpertsData.dll
+C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\bin\Debug\TravelExpertsData.pdb
+C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.csprojAssemblyReference.cache
+C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.csproj.CoreCompileInputs.cache
+C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.dll
+C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.pdb
