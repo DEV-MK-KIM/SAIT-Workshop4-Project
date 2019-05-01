@@ -58,5 +58,75 @@ namespace ObjectDataSourceTravelExperts
         {
             this.DialogResult = DialogResult.Retry;
         }
+
+        private void packageIDLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgAgencyCommissionTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgAgencyCommissionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void packageIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgBasePriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgBasePriceLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgDescTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgEndDateLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgEndDateDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgStartDateLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgStartDateDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pkgDescLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

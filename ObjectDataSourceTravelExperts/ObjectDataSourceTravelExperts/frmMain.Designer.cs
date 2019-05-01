@@ -176,6 +176,7 @@
             this.btnAddPkg.TabIndex = 2;
             this.btnAddPkg.Text = "&Add";
             this.btnAddPkg.UseVisualStyleBackColor = true;
+            this.btnAddPkg.Click += new System.EventHandler(this.btnAddPkg_Click);
             // 
             // groupSuppliers
             // 
