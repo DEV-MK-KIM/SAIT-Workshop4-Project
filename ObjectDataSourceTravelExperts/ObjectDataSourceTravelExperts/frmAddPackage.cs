@@ -16,5 +16,10 @@ namespace ObjectDataSourceTravelExperts
         {
             InitializeComponent();
         }
+
+        private void frmAddPackage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

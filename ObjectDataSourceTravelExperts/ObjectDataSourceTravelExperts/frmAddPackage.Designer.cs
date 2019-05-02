@@ -199,6 +199,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAddPackage";
             this.Text = "frmAddPackage";
+            this.Load += new System.EventHandler(this.frmAddPackage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
