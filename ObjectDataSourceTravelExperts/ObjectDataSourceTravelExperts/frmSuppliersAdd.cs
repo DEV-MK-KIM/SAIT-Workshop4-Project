@@ -22,6 +22,27 @@ namespace ObjectDataSourceTravelExperts
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
+            supplier = new Suppliers();
+            this.putSupplier(supplier);
+           
+
+            try
+            {
+                supplier.SupplierID = Suppliers_DB.AddSupplier(supplier);
+                
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+            
+        }
+
+        private void putSupplier(Suppliers supplier)
+        {
+            supplier.SupplierID = Convert.ToInt32(txtSupplierID.Text);
+            supplier.SupName = txtSupName.Text;
 
         }
     }
