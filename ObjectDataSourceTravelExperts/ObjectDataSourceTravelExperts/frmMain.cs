@@ -24,6 +24,7 @@ namespace ObjectDataSourceTravelExperts
         List<Packages> packages = null;
         List<Suppliers> suppliers = null;
         Suppliers supplier;
+        Packages package;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -96,7 +97,14 @@ namespace ObjectDataSourceTravelExperts
 
         private void btnAddPkg_Click(object sender, EventArgs e)
         {
+            frmAddPackage addPackageForm = new frmAddPackage();
+            addPackageForm.addPackage = true;
+            DialogResult result = addPackageForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                package = addPackageForm.package;
 
+            }
         }
     }
 }

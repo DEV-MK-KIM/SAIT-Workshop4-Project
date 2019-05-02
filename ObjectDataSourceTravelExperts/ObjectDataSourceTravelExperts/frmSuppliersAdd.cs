@@ -45,5 +45,10 @@ namespace ObjectDataSourceTravelExperts
             supplier.SupName = txtSupName.Text;
 
         }
+
+        private void frmSuppliersAdd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
