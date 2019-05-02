@@ -10,7 +10,13 @@ namespace TravelExpertsData
     {
         public int ProductID { get; set; } // primary key, auto increment
         public string ProdName { get; set; } // not null
-
-        // changes by mohamed
+    }
+    public Products Clone()
+    {
+        Products copy = new Products();
+        copy.ProductID = ProductID;
+        copy.ProdName = ProdName;
+        return copy;
+        // Done by Dingli
     }
 }
