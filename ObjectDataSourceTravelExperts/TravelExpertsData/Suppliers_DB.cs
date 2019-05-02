@@ -78,7 +78,7 @@ namespace TravelExpertsData
 
         public static int AddSupplier(Suppliers sup)
         { 
-            int supID = 0;
+           int supID = 0;
 
             // create connection
             SqlConnection connection = TravelExperts_DB.GetConnection();
@@ -98,7 +98,7 @@ namespace TravelExpertsData
                 connection.Open();
 
                 // execute insert command and get inserted ID
-                supID = (int)cmd.ExecuteScalar();
+             supID = (int)cmd.ExecuteScalar();
             
             }
             catch (Exception ex)
@@ -110,7 +110,7 @@ namespace TravelExpertsData
                 connection.Close();
             }
 
-            return supID;
+           return supID;
         }
 
        

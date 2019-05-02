@@ -25,11 +25,11 @@ namespace ObjectDataSourceTravelExperts
             supplier = new Suppliers();
             this.putSupplier(supplier);
            
-            
+
             try
             {
                 supplier.SupplierID = Suppliers_DB.AddSupplier(supplier);
-               // Suppliers_DB.AddSupplier(supplier);
+                
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
