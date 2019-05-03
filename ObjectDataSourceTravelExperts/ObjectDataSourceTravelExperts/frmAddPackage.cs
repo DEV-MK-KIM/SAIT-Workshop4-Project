@@ -22,19 +22,20 @@ namespace ObjectDataSourceTravelExperts
 
         private void frmAddPackage_Load(object sender, EventArgs e)
         {
-            package = new Packages();
-            this.putPackage(package);
-
-
-            try
+            if (addPackage) // processing Add
             {
-                package.PackageID = Packages_DB.AddPackage(package);
+                package = new Packages();
+                this.putPackage(package);
 
-                this.DialogResult = DialogResult.OK;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                try
+                {
+                    package.PackageID = Packages_DB.AddPackage(package);
+                    this.DialogResult = DialogResult.OK;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
             }
         }
     
