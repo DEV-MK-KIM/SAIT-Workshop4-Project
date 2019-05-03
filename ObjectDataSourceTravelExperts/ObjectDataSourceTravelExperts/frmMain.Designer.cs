@@ -52,16 +52,17 @@
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupProducts = new System.Windows.Forms.GroupBox();
-            this.groupLinkTables = new System.Windows.Forms.GroupBox();
-            this.btnLink = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnWeb = new System.Windows.Forms.Button();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupLinkTables = new System.Windows.Forms.GroupBox();
+            this.btnLink = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnWeb = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.packagesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,9 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.suppliersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
             this.groupProducts.SuspendLayout();
-            this.groupLinkTables.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            this.groupLinkTables.SuspendLayout();
             this.SuspendLayout();
             // 
             // packagesDataGridView
@@ -260,46 +261,14 @@
             this.groupProducts.TabStop = false;
             this.groupProducts.Text = "Products";
             // 
-            // groupLinkTables
+            // button1
             // 
-            this.groupLinkTables.Controls.Add(this.btnLink);
-            this.groupLinkTables.Location = new System.Drawing.Point(965, 40);
-            this.groupLinkTables.Name = "groupLinkTables";
-            this.groupLinkTables.Size = new System.Drawing.Size(200, 275);
-            this.groupLinkTables.TabIndex = 5;
-            this.groupLinkTables.TabStop = false;
-            this.groupLinkTables.Text = "Linked Tables";
-            // 
-            // btnLink
-            // 
-            this.btnLink.Location = new System.Drawing.Point(22, 236);
-            this.btnLink.Name = "btnLink";
-            this.btnLink.Size = new System.Drawing.Size(158, 23);
-            this.btnLink.TabIndex = 0;
-            this.btnLink.Text = "Manage Linked Tables";
-            this.btnLink.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(1085, 535);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(80, 26);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "&Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // btnWeb
-            // 
-            this.btnWeb.Location = new System.Drawing.Point(976, 535);
-            this.btnWeb.Name = "btnWeb";
-            this.btnWeb.Size = new System.Drawing.Size(80, 26);
-            this.btnWeb.TabIndex = 6;
-            this.btnWeb.Text = "&Website";
-            this.btnWeb.UseVisualStyleBackColor = true;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataSource = typeof(TravelExpertsData.Products);
+            this.button1.Location = new System.Drawing.Point(307, 275);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "&Add";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // productsDataGridView
             // 
@@ -337,20 +306,64 @@
             this.pEdit.Text = "Edit";
             this.pEdit.UseColumnTextForButtonValue = true;
             // 
-            // button1
+            // productsBindingSource
             // 
-            this.button1.Location = new System.Drawing.Point(307, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "&Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.productsBindingSource.DataSource = typeof(TravelExpertsData.Products);
+            // 
+            // groupLinkTables
+            // 
+            this.groupLinkTables.Controls.Add(this.btnLink);
+            this.groupLinkTables.Location = new System.Drawing.Point(965, 40);
+            this.groupLinkTables.Name = "groupLinkTables";
+            this.groupLinkTables.Size = new System.Drawing.Size(200, 275);
+            this.groupLinkTables.TabIndex = 5;
+            this.groupLinkTables.TabStop = false;
+            this.groupLinkTables.Text = "Linked Tables";
+            // 
+            // btnLink
+            // 
+            this.btnLink.Location = new System.Drawing.Point(22, 236);
+            this.btnLink.Name = "btnLink";
+            this.btnLink.Size = new System.Drawing.Size(158, 23);
+            this.btnLink.TabIndex = 0;
+            this.btnLink.Text = "Manage Linked Tables";
+            this.btnLink.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(1085, 535);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(80, 26);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnWeb
+            // 
+            this.btnWeb.Location = new System.Drawing.Point(976, 535);
+            this.btnWeb.Name = "btnWeb";
+            this.btnWeb.Size = new System.Drawing.Size(80, 26);
+            this.btnWeb.TabIndex = 6;
+            this.btnWeb.Text = "&Website";
+            this.btnWeb.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(861, 8);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(80, 26);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.Text = "&Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 665);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnWeb);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupLinkTables);
@@ -367,9 +380,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.suppliersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
             this.groupProducts.ResumeLayout(false);
-            this.groupLinkTables.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            this.groupLinkTables.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -390,7 +403,6 @@
         private System.Windows.Forms.Button btnAddPkg;
         private System.Windows.Forms.GroupBox groupSuppliers;
         private System.Windows.Forms.GroupBox groupProducts;
-        private System.Windows.Forms.DataGridView suppliersDataGridView;
         private System.Windows.Forms.BindingSource suppliersBindingSource;
         private System.Windows.Forms.Button btnSupAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
@@ -406,6 +418,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewButtonColumn pEdit;
         private System.Windows.Forms.BindingSource productsBindingSource;
+        public System.Windows.Forms.DataGridView suppliersDataGridView;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

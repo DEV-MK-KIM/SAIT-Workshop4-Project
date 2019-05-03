@@ -53,8 +53,8 @@ namespace TravelExpertsData
                 string updateStatement =
                   "UPDATE Suppliers SET " +
                   " SupName = @NewSupName " + // Only Update SupplierName
-                  "WHERE SupplierID = @OldSupplierID "+
-                  " AND SupName = @OldSupName";
+                  "WHERE SupplierID = @OldSupplierID ";//+
+                  //" AND SupName = @OldSupName";
                   
 
 
