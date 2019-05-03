@@ -13,7 +13,7 @@ namespace ObjectDataSourceTravelExperts
 {
     public partial class frmMain : Form
     {
-        const int EDIT_SUPPLIER_INDEX = 2 ; // index number of edit column in supplier table
+        const int EDIT_SUPPLIER_INDEX = 2; // index number of edit column in supplier table
         const int EDIT_PACKAGES_INDX = 7;
 
         public frmMain()
@@ -23,7 +23,7 @@ namespace ObjectDataSourceTravelExperts
 
         List<Packages> packages = null;
         List<Suppliers> suppliers = null;
-        Suppliers supplier;
+        public Suppliers supplier;
         Packages package;
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -49,8 +49,8 @@ namespace ObjectDataSourceTravelExperts
 
                 if (result == DialogResult.OK)
                 {
-                    CurrencyManager cm = (CurrencyManager)suppliersDataGridView.BindingContext[suppliers];
-                    cm.Refresh();
+                    CurrencyManager cms = (CurrencyManager)suppliersDataGridView.BindingContext[suppliers];
+                    cms.Refresh();
                 }
                 else
                 {
@@ -106,5 +106,12 @@ namespace ObjectDataSourceTravelExperts
 
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
     }
 }
