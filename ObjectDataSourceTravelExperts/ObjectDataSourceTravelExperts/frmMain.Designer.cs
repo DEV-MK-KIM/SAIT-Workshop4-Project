@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.packagesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupProducts = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -134,9 +134,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "PkgBasePrice";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn6.HeaderText = "Base Price";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 80;
@@ -144,19 +144,19 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "PkgAgencyCommission";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn7.HeaderText = "Agency Commission";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 80;
             // 
             // Edit
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle6;
             this.Edit.HeaderText = "Edit";
             this.Edit.Name = "Edit";
             this.Edit.Text = "Edit";
@@ -252,7 +252,7 @@
             // 
             // groupProducts
             // 
-            this.groupProducts.Controls.Add(this.button1);
+            this.groupProducts.Controls.Add(this.btnAddProduct);
             this.groupProducts.Controls.Add(this.productsDataGridView);
             this.groupProducts.Location = new System.Drawing.Point(18, 240);
             this.groupProducts.Name = "groupProducts";
@@ -261,14 +261,15 @@
             this.groupProducts.TabStop = false;
             this.groupProducts.Text = "Products";
             // 
-            // button1
+            // btnAddProduct
             // 
-            this.button1.Location = new System.Drawing.Point(307, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "&Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Location = new System.Drawing.Point(307, 275);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(61, 23);
+            this.btnAddProduct.TabIndex = 4;
+            this.btnAddProduct.Text = "Add";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // productsDataGridView
             // 
@@ -298,7 +299,6 @@
             // 
             // pEdit
             // 
-            this.pEdit.DataPropertyName = "ProdName";
             this.pEdit.HeaderText = "Edit";
             this.pEdit.Name = "pEdit";
             this.pEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -356,7 +356,6 @@
             this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
-        //    this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frmMain
             // 
@@ -412,14 +411,14 @@
         private System.Windows.Forms.Button btnLink;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnWeb;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.DataGridView productsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewButtonColumn pEdit;
         private System.Windows.Forms.BindingSource productsBindingSource;
         public System.Windows.Forms.DataGridView suppliersDataGridView;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewButtonColumn pEdit;
     }
 }
 

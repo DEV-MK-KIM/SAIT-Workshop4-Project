@@ -112,6 +112,18 @@ namespace ObjectDataSourceTravelExperts
             this.Close();
         }
 
-       
+        //Dingli done
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            frmAddProduct addProductForm = new frmAddProduct();
+            addProductForm.addProduct = true;
+            DialogResult result = addProductForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                product = addProductForm.product;
+
+            }
+        }
+        
     }
 }
