@@ -37,5 +37,10 @@ namespace TravelExpertsData
             return products;
             // Done by Dingli
         }
+
+        public static int AddProducts(Products products, Products oldProducts)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

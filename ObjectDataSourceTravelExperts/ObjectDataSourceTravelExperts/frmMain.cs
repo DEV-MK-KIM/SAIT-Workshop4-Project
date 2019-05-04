@@ -23,6 +23,8 @@ namespace ObjectDataSourceTravelExperts
 
         List<Packages> packages = null;
         List<Suppliers> suppliers = null;
+        List<Product> products = null;
+
         public Suppliers supplier;
         Packages package;
 
@@ -120,7 +122,7 @@ namespace ObjectDataSourceTravelExperts
             DialogResult result = addProductForm.ShowDialog();
             if (result == DialogResult.OK)
             {
-                product = addProductForm.product;
+                products = addProductForm.products;
 
             }
         }
