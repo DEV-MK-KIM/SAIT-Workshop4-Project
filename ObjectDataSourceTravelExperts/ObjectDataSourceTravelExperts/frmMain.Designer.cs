@@ -56,13 +56,20 @@
             this.btnLink = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnWeb = new System.Windows.Forms.Button();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.packagesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupSuppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
+            this.groupProducts.SuspendLayout();
             this.groupLinkTables.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // packagesDataGridView
@@ -242,9 +249,10 @@
             // 
             // groupProducts
             // 
+            this.groupProducts.Controls.Add(this.productsDataGridView);
             this.groupProducts.Location = new System.Drawing.Point(18, 240);
             this.groupProducts.Name = "groupProducts";
-            this.groupProducts.Size = new System.Drawing.Size(444, 285);
+            this.groupProducts.Size = new System.Drawing.Size(480, 339);
             this.groupProducts.TabIndex = 4;
             this.groupProducts.TabStop = false;
             this.groupProducts.Text = "Products";
@@ -286,6 +294,35 @@
             this.btnWeb.Text = "&Website";
             this.btnWeb.UseVisualStyleBackColor = true;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataSource = typeof(TravelExpertsData.Products);
+            // 
+            // productsDataGridView
+            // 
+            this.productsDataGridView.AutoGenerateColumns = false;
+            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.productsDataGridView.DataSource = this.productsBindingSource;
+            this.productsDataGridView.Location = new System.Drawing.Point(22, 19);
+            this.productsDataGridView.Name = "productsDataGridView";
+            this.productsDataGridView.Size = new System.Drawing.Size(352, 228);
+            this.productsDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ProductID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "ProductID";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ProdName";
+            this.dataGridViewTextBoxColumn11.HeaderText = "ProdName";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,7 +343,10 @@
             this.groupSuppliers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.suppliersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
+            this.groupProducts.ResumeLayout(false);
             this.groupLinkTables.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,6 +377,10 @@
         private System.Windows.Forms.Button btnLink;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnWeb;
+        private System.Windows.Forms.DataGridView productsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.BindingSource productsBindingSource;
     }
 }
 
