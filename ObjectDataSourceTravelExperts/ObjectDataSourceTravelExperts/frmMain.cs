@@ -28,6 +28,7 @@ namespace ObjectDataSourceTravelExperts
 
         public Suppliers supplier;
         Packages package;
+        public Products Products;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -49,7 +50,7 @@ namespace ObjectDataSourceTravelExperts
         {
             if (e.ColumnIndex == EDIT_SUPPLIER_INDEX)
             {
-                frmProductsUpdate updateSupplierForm = new frmProductsUpdate();
+                frmSuppliersUpdate updateSupplierForm = new frmSuppliersUpdate();
                 updateSupplierForm.supplier = suppliers[e.RowIndex]; // pass current customer to the update form
                 DialogResult result = updateSupplierForm.ShowDialog(); // display modal
 
@@ -127,7 +128,7 @@ namespace ObjectDataSourceTravelExperts
             if (result == DialogResult.OK)
             {
                 products = addProductForm.products;
-
+               
             }
         }
 
@@ -136,18 +137,18 @@ namespace ObjectDataSourceTravelExperts
             if (e.ColumnIndex == EDIT_PRODUCTS_INDEX)
             {
                 frmProductsUpdate updateProductsForm = new frmProductsUpdate();
-                updateProductsForm.products = products[e.RowIndex]; // pass current customer to the update form
+                updateProductsForm.products = products[e.RowIndex];// pass current customer to the update form
                 DialogResult result = updateProductsForm.ShowDialog(); // display modal
 
                 if (result == DialogResult.OK)
                 {
-                    CurrencyManager cms = (CurrencyManager)suppliersDataGridView.BindingContext[suppliers];
+                    CurrencyManager cms = (CurrencyManager)productsDataGridView.BindingContext[products];
                     cms.Refresh();
                 }
                 else
                 {
                     products = Products_DB.GetProducts();
-                    suppliersDataGridView.DataSource = products;
+                    productsDataGridView.DataSource = products;
                 }
             }
         }

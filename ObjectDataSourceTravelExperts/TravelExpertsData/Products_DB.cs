@@ -38,7 +38,12 @@ namespace TravelExpertsData
 
         }
 
-        public static int AddProducts(Products products, Products oldProducts)
+        public static int AddProducts(Products products)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static int UpdateProducts(Products products, Products oldProducts)
         {
             throw new NotImplementedException();
         }
