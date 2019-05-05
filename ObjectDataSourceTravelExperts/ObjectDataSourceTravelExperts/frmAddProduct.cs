@@ -23,7 +23,7 @@ namespace ObjectDataSourceTravelExperts
             InitializeComponent();
         }
 
-        private void frmAddProduct_Load(object sender, EventArgs e)
+        private void frmAddProduct_Load_1(object sender, EventArgs e)
         {
             oldProducts = products.Clone();
             productsBindingSource.Clear();

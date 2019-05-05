@@ -41,10 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataSource = typeof(TravelExpertsData.Products);
-            // 
             // prodNameLabel
             // 
             prodNameLabel.AutoSize = true;
@@ -54,14 +50,6 @@
             prodNameLabel.TabIndex = 0;
             prodNameLabel.Text = "Prod Name:";
             // 
-            // txtProdName
-            // 
-            this.txtProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
-            this.txtProdName.Location = new System.Drawing.Point(84, 64);
-            this.txtProdName.Name = "txtProdName";
-            this.txtProdName.Size = new System.Drawing.Size(143, 20);
-            this.txtProdName.TabIndex = 1;
-            // 
             // productIDLabel
             // 
             productIDLabel.AutoSize = true;
@@ -70,6 +58,18 @@
             productIDLabel.Size = new System.Drawing.Size(61, 13);
             productIDLabel.TabIndex = 2;
             productIDLabel.Text = "Product ID:";
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataSource = typeof(TravelExpertsData.Products);
+            // 
+            // txtProdName
+            // 
+            this.txtProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
+            this.txtProdName.Location = new System.Drawing.Point(84, 64);
+            this.txtProdName.Name = "txtProdName";
+            this.txtProdName.Size = new System.Drawing.Size(143, 20);
+            this.txtProdName.TabIndex = 1;
             // 
             // productIDTextBox
             // 
@@ -112,6 +112,7 @@
             this.Controls.Add(this.txtProdName);
             this.Name = "frmAddProduct";
             this.Text = "frmAddProduct";
+            this.Load += new System.EventHandler(this.frmAddProduct_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
