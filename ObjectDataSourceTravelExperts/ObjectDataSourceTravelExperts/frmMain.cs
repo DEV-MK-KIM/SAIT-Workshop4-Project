@@ -15,6 +15,7 @@ namespace ObjectDataSourceTravelExperts
     {
         const int EDIT_SUPPLIER_INDEX = 2; // index number of edit column in supplier table
         const int EDIT_PACKAGES_INDX = 7;
+        const int EDIT_PRODUCTS_INDEX = 2;
 
         public frmMain()
         {
