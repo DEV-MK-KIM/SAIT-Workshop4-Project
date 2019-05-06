@@ -13,33 +13,20 @@ namespace ObjectDataSourceTravelExperts
 {
     public partial class frmProductsUpdate : Form
     {
-        public Suppliers supplier;
-        public Suppliers oldSupplier;
+        public Products products;
+        public Products oldProducts;
+        private object txtProdName;
 
         public frmProductsUpdate()
         {
             InitializeComponent();
         }
 
-        private void frmSuppliersUpdate_Load(object sender, EventArgs e)
-        {
-            oldSupplier = supplier.Clone();
-
-            suppliersBindingSource.Clear();
-            suppliersBindingSource.Add(supplier);
-            txtSupName.Focus();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Retry; // anything but ok
-        }
-
-        private void btnAccept_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                bool success = Suppliers_DB.UpdateSuppliers(supplier, oldSupplier);
+                bool success = Products_DB.UpdateProducts(products, oldProducts);
                 if (success)
                 {
                     MessageBox.Show("Update successful", "Success");
@@ -58,6 +45,19 @@ namespace ObjectDataSourceTravelExperts
                     ex.GetType().ToString());
                 //this.DialogResult = DialogResult.Retry;
             }
+        }
+
+        private void frmProductsUpdate_Load(object sender, EventArgs e)
+        {
+            oldProducts = products.Clone();
+            productsBindingSource.Clear();
+            productsBindingSource.Add(products);
+            txtProdName.Focus();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Retry; // anything but ok
         }
     }
 }

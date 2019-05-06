@@ -35,7 +35,17 @@ namespace TravelExpertsData
                 }
             }
             return products;
-            // Done by Dingli
+
+        }
+
+        public static int AddProducts(Products products)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static int UpdateProducts(Products products, Products oldProducts)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ObjectDataSourceTravelExperts
     {
         const int EDIT_SUPPLIER_INDEX = 2; // index number of edit column in supplier table
         const int EDIT_PACKAGES_INDX = 7;
+        const int EDIT_PRODUCTS_INDEX = 2;
 
         public frmMain()
         {
@@ -23,8 +24,11 @@ namespace ObjectDataSourceTravelExperts
 
         List<Packages> packages = null;
         List<Suppliers> suppliers = null;
+        List<Products> products = null;
+
         public Suppliers supplier;
         Packages package;
+        public Products Products;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -35,7 +39,10 @@ namespace ObjectDataSourceTravelExperts
             //Suppliers 
             suppliers = Suppliers_DB.GetSuppliers();
             suppliersDataGridView.DataSource = suppliers;
-            
+
+            products = Products_DB.GetProducts();
+            productsDataGridView.DataSource = products;
+
 
         }
 
@@ -112,6 +119,38 @@ namespace ObjectDataSourceTravelExperts
             this.Close();
         }
 
-       
+        //Done by Dingli
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            frmAddProduct addProductForm = new frmAddProduct();
+            addProductForm.addProduct = true;
+            DialogResult result = addProductForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                products = addProductForm.products;
+               
+            }
+        }
+
+        private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == EDIT_PRODUCTS_INDEX)
+            {
+                frmProductsUpdate updateProductsForm = new frmProductsUpdate();
+                updateProductsForm.products = products[e.RowIndex];// pass current customer to the update form
+                DialogResult result = updateProductsForm.ShowDialog(); // display modal
+
+                if (result == DialogResult.OK)
+                {
+                    CurrencyManager cms = (CurrencyManager)productsDataGridView.BindingContext[products];
+                    cms.Refresh();
+                }
+                else
+                {
+                    products = Products_DB.GetProducts();
+                    productsDataGridView.DataSource = products;
+                }
+            }
+        }
     }
 }
