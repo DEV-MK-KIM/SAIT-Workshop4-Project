@@ -11,13 +11,13 @@ using TravelExpertsData;
 
 namespace ObjectDataSourceTravelExperts
 {
-    public partial class frmProductsUpdate : Form
+    public partial class frmSuppliersUpdate : Form
     {
         public Products products;
         public Products oldProducts;
         private object txtProdName;
 
-        public frmProductsUpdate()
+        public frmSuppliersUpdate()
         {
             InitializeComponent();
         }
