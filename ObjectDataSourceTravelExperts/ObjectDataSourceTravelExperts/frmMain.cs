@@ -13,8 +13,9 @@ namespace ObjectDataSourceTravelExperts
 {
     public partial class frmMain : Form
     {
-        const int EDIT_SUPPLIER_INDEX = 2 ; // index number of edit column in supplier table
+        const int EDIT_SUPPLIER_INDEX = 2; // index number of edit column in supplier table
         const int EDIT_PACKAGES_INDX = 7;
+        const int EDIT_PRODUCTS_INDEX = 2;
 
         public frmMain()
         {
@@ -23,6 +24,11 @@ namespace ObjectDataSourceTravelExperts
 
         List<Packages> packages = null;
         List<Suppliers> suppliers = null;
+        List<Products> products = null;
+
+        public Suppliers supplier;
+        Packages package;
+        public Products Products;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -33,7 +39,10 @@ namespace ObjectDataSourceTravelExperts
             //Suppliers 
             suppliers = Suppliers_DB.GetSuppliers();
             suppliersDataGridView.DataSource = suppliers;
-            
+
+            products = Products_DB.GetProducts();
+            productsDataGridView.DataSource = products;
+
 
         }
 
@@ -41,14 +50,15 @@ namespace ObjectDataSourceTravelExperts
         {
             if (e.ColumnIndex == EDIT_SUPPLIER_INDEX)
             {
+                
                 frmSuppliersUpdate updateSupplierForm = new frmSuppliersUpdate();
                 updateSupplierForm.supplier = suppliers[e.RowIndex]; // pass current customer to the update form
                 DialogResult result = updateSupplierForm.ShowDialog(); // display modal
 
                 if (result == DialogResult.OK)
                 {
-                    CurrencyManager cm = (CurrencyManager)suppliersDataGridView.BindingContext[suppliers];
-                    cm.Refresh();
+                    CurrencyManager cms = (CurrencyManager)suppliersDataGridView.BindingContext[suppliers];
+                    cms.Refresh();
                 }
                 else
                 {
@@ -80,6 +90,68 @@ namespace ObjectDataSourceTravelExperts
                 }
             }
         }
+        
+        private void btnSupAdd_Click(object sender, EventArgs e)
+        {
+            frmSuppliersAdd addSupplierForm = new frmSuppliersAdd();
+            addSupplierForm.addSupplier = true;
+            DialogResult result = addSupplierForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                supplier = addSupplierForm.supplier;
+              
+            }
+        }
 
+        private void btnAddPkg_Click(object sender, EventArgs e)
+        {
+            frmAddPackage addPackageForm = new frmAddPackage();
+            addPackageForm.addPackage = true;
+            DialogResult result = addPackageForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                package = addPackageForm.package;
+
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //Done by Dingli
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            frmAddProduct addProductForm = new frmAddProduct();
+            addProductForm.addProduct = true;
+            DialogResult result = addProductForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                products = addProductForm.products;
+               
+            }
+        }
+
+        private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == EDIT_PRODUCTS_INDEX)
+            {
+                frmSuppliersUpdate updateProductsForm = new frmSuppliersUpdate();
+                updateProductsForm.products = products[e.RowIndex];// pass current customer to the update form
+                DialogResult result = updateProductsForm.ShowDialog(); // display modal
+
+                if (result == DialogResult.OK)
+                {
+                    CurrencyManager cms = (CurrencyManager)productsDataGridView.BindingContext[products];
+                    cms.Refresh();
+                }
+                else
+                {
+                    products = Products_DB.GetProducts();
+                    productsDataGridView.DataSource = products;
+                }
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ObjectDataSourceTravelExperts
 {
-    partial class frmSuppliersUpdate
+    partial class frmSuppliersAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@
         {
             System.Windows.Forms.Label supNameLabel;
             System.Windows.Forms.Label supplierIDLabel;
-            this.txtSupName = new System.Windows.Forms.TextBox();
-            this.supplierIDTextBox = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtSupName = new System.Windows.Forms.TextBox();
+            this.txtSupplierID = new System.Windows.Forms.TextBox();
             supNameLabel = new System.Windows.Forms.Label();
             supplierIDLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -41,69 +41,69 @@
             // supNameLabel
             // 
             supNameLabel.AutoSize = true;
-            supNameLabel.Location = new System.Drawing.Point(32, 50);
+            supNameLabel.Location = new System.Drawing.Point(54, 78);
             supNameLabel.Name = "supNameLabel";
             supNameLabel.Size = new System.Drawing.Size(79, 13);
-            supNameLabel.TabIndex = 1;
+            supNameLabel.TabIndex = 7;
             supNameLabel.Text = "Supplier Name:";
             // 
             // supplierIDLabel
             // 
             supplierIDLabel.AutoSize = true;
-            supplierIDLabel.Location = new System.Drawing.Point(49, 24);
+            supplierIDLabel.Location = new System.Drawing.Point(71, 52);
             supplierIDLabel.Name = "supplierIDLabel";
             supplierIDLabel.Size = new System.Drawing.Size(62, 13);
-            supplierIDLabel.TabIndex = 3;
+            supplierIDLabel.TabIndex = 9;
             supplierIDLabel.Text = "Supplier ID:";
             // 
-            // txtSupName
+            // btnCancel
             // 
-            this.txtSupName.Location = new System.Drawing.Point(117, 47);
-            this.txtSupName.Name = "txtSupName";
-            this.txtSupName.Size = new System.Drawing.Size(176, 20);
-            this.txtSupName.TabIndex = 2;
-            // 
-            // supplierIDTextBox
-            // 
-            this.supplierIDTextBox.Location = new System.Drawing.Point(117, 21);
-            this.supplierIDTextBox.Name = "supplierIDTextBox";
-            this.supplierIDTextBox.ReadOnly = true;
-            this.supplierIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.supplierIDTextBox.TabIndex = 4;
+            this.btnCancel.Location = new System.Drawing.Point(240, 110);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(117, 82);
+            this.btnAccept.Location = new System.Drawing.Point(139, 110);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
-            this.btnAccept.TabIndex = 5;
+            this.btnAccept.TabIndex = 11;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
-            // button1
+            // txtSupName
             // 
-            this.button1.Location = new System.Drawing.Point(218, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtSupName.Location = new System.Drawing.Point(139, 75);
+            this.txtSupName.Name = "txtSupName";
+            this.txtSupName.Size = new System.Drawing.Size(176, 20);
+            this.txtSupName.TabIndex = 8;
             // 
-            // frmSuppliersUpdate
+            // txtSupplierID
+            // 
+            this.txtSupplierID.Location = new System.Drawing.Point(139, 49);
+            this.txtSupplierID.Name = "txtSupplierID";
+            this.txtSupplierID.Size = new System.Drawing.Size(100, 20);
+            this.txtSupplierID.TabIndex = 10;
+            // 
+            // frmSuppliersAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 135);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(375, 165);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(supNameLabel);
             this.Controls.Add(this.txtSupName);
             this.Controls.Add(supplierIDLabel);
-            this.Controls.Add(this.supplierIDTextBox);
-            this.Name = "frmSuppliersUpdate";
-            this.Text = "frmSuppliersUpdate";
-            this.Load += new System.EventHandler(this.frmSuppliersUpdate_Load);
+            this.Controls.Add(this.txtSupplierID);
+            this.Name = "frmSuppliersAdd";
+            this.Text = "frmSuppliersAdd";
+            this.Load += new System.EventHandler(this.frmSuppliersAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,11 +111,9 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource suppliersBindingSource;
-        private System.Windows.Forms.TextBox txtSupName;
-        private System.Windows.Forms.TextBox supplierIDTextBox;
-        private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.TextBox txtSupName;
+        private System.Windows.Forms.TextBox txtSupplierID;
     }
 }
