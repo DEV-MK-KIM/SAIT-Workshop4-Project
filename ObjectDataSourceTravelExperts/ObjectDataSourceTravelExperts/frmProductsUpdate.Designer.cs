@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.Label prodNameLabel;
             System.Windows.Forms.Label productIDLabel;
-            this.txtProdName_1 = new System.Windows.Forms.TextBox();
+            this.txtProdName = new System.Windows.Forms.TextBox();
             this.productIDTextBox = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.butnCancel = new System.Windows.Forms.Button();
@@ -56,12 +56,12 @@
             productIDLabel.TabIndex = 2;
             productIDLabel.Text = "Product ID:";
             // 
-            // txtProdName_1
+            // txtProdName
             // 
-            this.txtProdName_1.Location = new System.Drawing.Point(94, 63);
-            this.txtProdName_1.Name = "txtProdName_1";
-            this.txtProdName_1.Size = new System.Drawing.Size(178, 20);
-            this.txtProdName_1.TabIndex = 1;
+            this.txtProdName.Location = new System.Drawing.Point(94, 63);
+            this.txtProdName.Name = "txtProdName";
+            this.txtProdName.Size = new System.Drawing.Size(178, 20);
+            this.txtProdName.TabIndex = 1;
             // 
             // productIDTextBox
             // 
@@ -89,7 +89,7 @@
             this.butnCancel.TabIndex = 8;
             this.butnCancel.Text = "Cancel";
             this.butnCancel.UseVisualStyleBackColor = true;
-            this.butnCancel.Click += new System.EventHandler(this.button1_Click);
+            this.butnCancel.Click += new System.EventHandler(this.butnCancel_Click);
             // 
             // frmProductsUpdate
             // 
@@ -101,7 +101,7 @@
             this.Controls.Add(productIDLabel);
             this.Controls.Add(this.productIDTextBox);
             this.Controls.Add(prodNameLabel);
-            this.Controls.Add(this.txtProdName_1);
+            this.Controls.Add(this.txtProdName);
             this.Name = "frmProductsUpdate";
             this.Text = "frmProductsUpdate";
             this.Load += new System.EventHandler(this.frmProductsUpdate_Load);
@@ -113,10 +113,10 @@
         #endregion
 
         private System.Windows.Forms.BindingSource productsBindingSource;
-        private System.Windows.Forms.TextBox txtProdName_1;
+        private System.Windows.Forms.TextBox txtProdName;
         private System.Windows.Forms.TextBox productIDTextBox;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button butnCancel;
+        private System.Windows.Forms.Button btnUpdate;
+        //private System.Windows.Forms.Button butnCancel;
     }
 }

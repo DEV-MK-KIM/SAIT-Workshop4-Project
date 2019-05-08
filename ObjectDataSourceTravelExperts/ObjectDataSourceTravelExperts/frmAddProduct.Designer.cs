@@ -112,7 +112,7 @@
             this.Controls.Add(this.txtProdName);
             this.Name = "frmAddProduct";
             this.Text = "frmAddProduct";
-            this.Load += new System.EventHandler(this.frmAddProduct_Load_1);
+            
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
