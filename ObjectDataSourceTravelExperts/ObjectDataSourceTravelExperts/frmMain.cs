@@ -28,7 +28,7 @@ namespace ObjectDataSourceTravelExperts
 
         public Suppliers supplier;
         Packages package;
-        public Products Products;
+        public Products product;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -128,7 +128,7 @@ namespace ObjectDataSourceTravelExperts
             DialogResult result = addProductForm.ShowDialog();
             if (result == DialogResult.OK)
             {
-                products = addProductForm.products;
+                product = addProductForm.products;
             }
         }
 
