@@ -129,7 +129,6 @@ namespace ObjectDataSourceTravelExperts
             if (result == DialogResult.OK)
             {
                 products = addProductForm.products;
-               
             }
         }
 
