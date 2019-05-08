@@ -50,6 +50,7 @@ namespace ObjectDataSourceTravelExperts
         {
             if (e.ColumnIndex == EDIT_SUPPLIER_INDEX)
             {
+                
                 frmSuppliersUpdate updateSupplierForm = new frmSuppliersUpdate();
                 updateSupplierForm.supplier = suppliers[e.RowIndex]; // pass current customer to the update form
                 DialogResult result = updateSupplierForm.ShowDialog(); // display modal
@@ -136,7 +137,7 @@ namespace ObjectDataSourceTravelExperts
         {
             if (e.ColumnIndex == EDIT_PRODUCTS_INDEX)
             {
-                frmProductsUpdate updateProductsForm = new frmProductsUpdate();
+                frmSuppliersUpdate updateProductsForm = new frmSuppliersUpdate();
                 updateProductsForm.products = products[e.RowIndex];// pass current customer to the update form
                 DialogResult result = updateProductsForm.ShowDialog(); // display modal
 

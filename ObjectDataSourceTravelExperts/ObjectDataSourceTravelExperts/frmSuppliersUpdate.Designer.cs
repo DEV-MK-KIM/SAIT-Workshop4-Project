@@ -1,6 +1,6 @@
 ﻿namespace ObjectDataSourceTravelExperts
 {
-    partial class frmProductsUpdate
+    partial class frmSuppliersUpdate
     {
         /// <summary>
         /// Required designer variable.
@@ -90,7 +90,7 @@
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // frmProductsUpdate
+            // frmSuppliersUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,7 +101,7 @@
             this.Controls.Add(this.txtSupName);
             this.Controls.Add(supplierIDLabel);
             this.Controls.Add(this.supplierIDTextBox);
-            this.Name = "frmProductsUpdate";
+            this.Name = "frmSuppliersUpdate";
             this.Text = "frmSuppliersUpdate";
             this.Load += new System.EventHandler(this.frmSuppliersUpdate_Load);
             this.ResumeLayout(false);

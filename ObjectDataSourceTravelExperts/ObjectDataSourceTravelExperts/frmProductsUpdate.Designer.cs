@@ -1,6 +1,6 @@
 ﻿namespace ObjectDataSourceTravelExperts
 {
-    partial class frmProductsUpdate
+    partial class frmSuppliersUpdate
     {
         /// <summary>
         /// Required designer variable.
