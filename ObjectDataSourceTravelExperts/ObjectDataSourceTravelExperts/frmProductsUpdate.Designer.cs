@@ -1,6 +1,6 @@
 ﻿namespace ObjectDataSourceTravelExperts
 {
-    partial class frmSuppliersUpdate
+    partial class frmProductsUpdate
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.Label prodNameLabel;
             System.Windows.Forms.Label productIDLabel;
-            this.prodNameTextBox = new System.Windows.Forms.TextBox();
+            this.txtProdName_1 = new System.Windows.Forms.TextBox();
             this.productIDTextBox = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.butnCancel = new System.Windows.Forms.Button();
@@ -56,12 +56,12 @@
             productIDLabel.TabIndex = 2;
             productIDLabel.Text = "Product ID:";
             // 
-            // prodNameTextBox
+            // txtProdName_1
             // 
-            this.prodNameTextBox.Location = new System.Drawing.Point(94, 63);
-            this.prodNameTextBox.Name = "prodNameTextBox";
-            this.prodNameTextBox.Size = new System.Drawing.Size(178, 20);
-            this.prodNameTextBox.TabIndex = 1;
+            this.txtProdName_1.Location = new System.Drawing.Point(94, 63);
+            this.txtProdName_1.Name = "txtProdName_1";
+            this.txtProdName_1.Size = new System.Drawing.Size(178, 20);
+            this.txtProdName_1.TabIndex = 1;
             // 
             // productIDTextBox
             // 
@@ -101,7 +101,7 @@
             this.Controls.Add(productIDLabel);
             this.Controls.Add(this.productIDTextBox);
             this.Controls.Add(prodNameLabel);
-            this.Controls.Add(this.prodNameTextBox);
+            this.Controls.Add(this.txtProdName_1);
             this.Name = "frmProductsUpdate";
             this.Text = "frmProductsUpdate";
             this.Load += new System.EventHandler(this.frmProductsUpdate_Load);
@@ -113,7 +113,7 @@
         #endregion
 
         private System.Windows.Forms.BindingSource productsBindingSource;
-        private System.Windows.Forms.TextBox prodNameTextBox;
+        private System.Windows.Forms.TextBox txtProdName_1;
         private System.Windows.Forms.TextBox productIDTextBox;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnUpdate;

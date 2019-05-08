@@ -137,7 +137,7 @@ namespace ObjectDataSourceTravelExperts
         {
             if (e.ColumnIndex == EDIT_PRODUCTS_INDEX)
             {
-                frmSuppliersUpdate updateProductsForm = new frmSuppliersUpdate();
+                frmProductsUpdate updateProductsForm = new frmProductsUpdate();
                 updateProductsForm.products = products[e.RowIndex];// pass current customer to the update form
                 DialogResult result = updateProductsForm.ShowDialog(); // display modal
 

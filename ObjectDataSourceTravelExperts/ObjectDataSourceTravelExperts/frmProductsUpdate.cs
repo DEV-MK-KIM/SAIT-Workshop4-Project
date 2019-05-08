@@ -11,13 +11,12 @@ using TravelExpertsData;
 
 namespace ObjectDataSourceTravelExperts
 {
-    public partial class frmSuppliersUpdate : Form
+    public partial class frmProductsUpdate : Form
     {
         public Products products;
         public Products oldProducts;
-        private object txtProdName;
 
-        public frmSuppliersUpdate()
+        public frmProductsUpdate()
         {
             InitializeComponent();
         }
@@ -52,7 +51,7 @@ namespace ObjectDataSourceTravelExperts
             oldProducts = products.Clone();
             productsBindingSource.Clear();
             productsBindingSource.Add(products);
-            txtProdName.Focus();
+            txtProdName_1.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
