@@ -28,7 +28,7 @@ namespace ObjectDataSourceTravelExperts
 
         public Suppliers supplier;
         Packages package;
-        public Products Products;
+        public Products product;
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -128,8 +128,7 @@ namespace ObjectDataSourceTravelExperts
             DialogResult result = addProductForm.ShowDialog();
             if (result == DialogResult.OK)
             {
-                products = addProductForm.products;
-               
+                product = addProductForm.products;
             }
         }
 
@@ -137,7 +136,7 @@ namespace ObjectDataSourceTravelExperts
         {
             if (e.ColumnIndex == EDIT_PRODUCTS_INDEX)
             {
-                frmSuppliersUpdate updateProductsForm = new frmSuppliersUpdate();
+                frmProductsUpdate updateProductsForm = new frmProductsUpdate();
                 updateProductsForm.products = products[e.RowIndex];// pass current customer to the update form
                 DialogResult result = updateProductsForm.ShowDialog(); // display modal
 

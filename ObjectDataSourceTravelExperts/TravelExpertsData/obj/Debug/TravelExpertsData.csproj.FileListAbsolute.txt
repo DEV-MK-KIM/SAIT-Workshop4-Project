@@ -26,3 +26,9 @@ C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpert
 C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.csproj.CoreCompileInputs.cache
 C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.dll
 C:\Users\543871\Source\Repos\4Project\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.pdb
+C:\Users\543871\source\repos\TravelExpert Proejct\ObjectDataSourceTravelExperts\TravelExpertsData\bin\Debug\TravelExpertsData.dll
+C:\Users\543871\source\repos\TravelExpert Proejct\ObjectDataSourceTravelExperts\TravelExpertsData\bin\Debug\TravelExpertsData.pdb
+C:\Users\543871\source\repos\TravelExpert Proejct\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.csprojAssemblyReference.cache
+C:\Users\543871\source\repos\TravelExpert Proejct\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.csproj.CoreCompileInputs.cache
+C:\Users\543871\source\repos\TravelExpert Proejct\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.dll
+C:\Users\543871\source\repos\TravelExpert Proejct\ObjectDataSourceTravelExperts\TravelExpertsData\obj\Debug\TravelExpertsData.pdb
