@@ -11,6 +11,7 @@ using TravelExpertsData;
 
 namespace ObjectDataSourceTravelExperts
 {// Author: Lee Neufeld
+// May/10/2019
     public partial class frmPackageUpdate : Form
     {
         public Packages package;
@@ -21,6 +22,7 @@ namespace ObjectDataSourceTravelExperts
             InitializeComponent();
         }
 
+        // populates data from database
         private void frmPackageUpdate_Load(object sender, EventArgs e)
         {
             List<Packages> packages = Packages_DB.GetAllPackages();
@@ -29,7 +31,7 @@ namespace ObjectDataSourceTravelExperts
             packagesBindingSource.Clear();
             packagesBindingSource.Add(package);
         }
-
+        // adds package updates to database
         private void btnAccept_Click(object sender, EventArgs e)
         {
             try
@@ -53,80 +55,11 @@ namespace ObjectDataSourceTravelExperts
                
             }
         }
-
+        // closes form
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Retry;
         }
 
-        private void packageIDLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgAgencyCommissionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgAgencyCommissionLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void packageIDTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgBasePriceTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgBasePriceLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgDescTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgEndDateLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgEndDateDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgStartDateLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgStartDateDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pkgDescLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

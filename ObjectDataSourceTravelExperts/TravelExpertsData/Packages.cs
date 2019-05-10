@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsData
 {//Author: Lee Neufeld
+// May/10/2019
     public class Packages
     {
         public int PackageID { get; set; } // Primary Key, auto increment
@@ -17,7 +18,7 @@ namespace TravelExpertsData
         public decimal? PkgAgencyCommission { get; set; } // null
 
 
-   
+   // clones info for update
     public Packages Clone()
     {
         Packages copy = new Packages();

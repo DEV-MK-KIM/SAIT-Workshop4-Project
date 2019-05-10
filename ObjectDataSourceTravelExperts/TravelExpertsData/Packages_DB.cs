@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsData
 {// Author: Lee Neufeld
+//May/10/2019
     public static class Packages_DB
     {
+        // gets all data for packages table
         public static List<Packages> GetAllPackages()
         {
             List<Packages> packages = new List<Packages>();
