@@ -53,8 +53,8 @@ namespace TravelExpertsData
                 string updateStatement =
                   "UPDATE Suppliers SET " +
                   " SupName = @NewSupName " + // Only Update SupplierName
-                  "WHERE SupplierID = @OldSupplierID "+
-                  " AND SupName = @OldSupName";
+                  "WHERE SupplierID = @OldSupplierID ";//+
+                  //" AND SupName = @OldSupName";
                   
 
 
@@ -78,7 +78,9 @@ namespace TravelExpertsData
 
         public static int AddSupplier(Suppliers sup)
         { 
-            int supID = 0;
+           int supID = 0;
+            // select max supplier Max ID
+            // 
 
             // create connection
             SqlConnection connection = TravelExperts_DB.GetConnection();
@@ -92,13 +94,13 @@ namespace TravelExpertsData
             SqlCommand cmd = new SqlCommand(insertStatement, connection);
             cmd.Parameters.AddWithValue("@SupplierID", sup.SupplierID);
             cmd.Parameters.AddWithValue("@SupName", sup.SupName);
-            
+            int count = 0;
             try
             {
                 connection.Open();
 
                 // execute insert command and get inserted ID
-                supID = (int)cmd.ExecuteScalar();
+             count = (int)cmd.ExecuteNonQuery();
             
             }
             catch (Exception ex)
@@ -110,7 +112,7 @@ namespace TravelExpertsData
                 connection.Close();
             }
 
-            return supID;
+           return supID;
         }
 
        

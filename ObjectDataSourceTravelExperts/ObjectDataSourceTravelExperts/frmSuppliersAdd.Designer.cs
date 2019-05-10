@@ -38,6 +38,24 @@
             supplierIDLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // supNameLabel
+            // 
+            supNameLabel.AutoSize = true;
+            supNameLabel.Location = new System.Drawing.Point(54, 78);
+            supNameLabel.Name = "supNameLabel";
+            supNameLabel.Size = new System.Drawing.Size(79, 13);
+            supNameLabel.TabIndex = 7;
+            supNameLabel.Text = "Supplier Name:";
+            // 
+            // supplierIDLabel
+            // 
+            supplierIDLabel.AutoSize = true;
+            supplierIDLabel.Location = new System.Drawing.Point(71, 52);
+            supplierIDLabel.Name = "supplierIDLabel";
+            supplierIDLabel.Size = new System.Drawing.Size(62, 13);
+            supplierIDLabel.TabIndex = 9;
+            supplierIDLabel.Text = "Supplier ID:";
+            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(240, 110);
@@ -46,6 +64,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAccept
             // 
@@ -57,30 +76,12 @@
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
-            // supNameLabel
-            // 
-            supNameLabel.AutoSize = true;
-            supNameLabel.Location = new System.Drawing.Point(54, 78);
-            supNameLabel.Name = "supNameLabel";
-            supNameLabel.Size = new System.Drawing.Size(79, 13);
-            supNameLabel.TabIndex = 7;
-            supNameLabel.Text = "Supplier Name:";
-            // 
             // txtSupName
             // 
             this.txtSupName.Location = new System.Drawing.Point(139, 75);
             this.txtSupName.Name = "txtSupName";
             this.txtSupName.Size = new System.Drawing.Size(176, 20);
             this.txtSupName.TabIndex = 8;
-            // 
-            // supplierIDLabel
-            // 
-            supplierIDLabel.AutoSize = true;
-            supplierIDLabel.Location = new System.Drawing.Point(71, 52);
-            supplierIDLabel.Name = "supplierIDLabel";
-            supplierIDLabel.Size = new System.Drawing.Size(62, 13);
-            supplierIDLabel.TabIndex = 9;
-            supplierIDLabel.Text = "Supplier ID:";
             // 
             // txtSupplierID
             // 
@@ -102,6 +103,7 @@
             this.Controls.Add(this.txtSupplierID);
             this.Name = "frmSuppliersAdd";
             this.Text = "frmSuppliersAdd";
+            this.Load += new System.EventHandler(this.frmSuppliersAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -52,14 +52,17 @@
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupProducts = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupLinkTables = new System.Windows.Forms.GroupBox();
             this.btnLink = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnWeb = new System.Windows.Forms.Button();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.packagesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -67,9 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.suppliersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
             this.groupProducts.SuspendLayout();
-            this.groupLinkTables.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            this.groupLinkTables.SuspendLayout();
             this.SuspendLayout();
             // 
             // packagesDataGridView
@@ -249,13 +252,63 @@
             // 
             // groupProducts
             // 
+            this.groupProducts.Controls.Add(this.button1);
             this.groupProducts.Controls.Add(this.productsDataGridView);
             this.groupProducts.Location = new System.Drawing.Point(18, 240);
             this.groupProducts.Name = "groupProducts";
-            this.groupProducts.Size = new System.Drawing.Size(480, 339);
+            this.groupProducts.Size = new System.Drawing.Size(444, 318);
             this.groupProducts.TabIndex = 4;
             this.groupProducts.TabStop = false;
             this.groupProducts.Text = "Products";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(307, 275);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "&Add";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // productsDataGridView
+            // 
+            this.productsDataGridView.AutoGenerateColumns = false;
+            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.pEdit});
+            this.productsDataGridView.DataSource = this.productsBindingSource;
+            this.productsDataGridView.Location = new System.Drawing.Point(20, 19);
+            this.productsDataGridView.Name = "productsDataGridView";
+            this.productsDataGridView.Size = new System.Drawing.Size(348, 220);
+            this.productsDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ProductID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "ProductID";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ProdName";
+            this.dataGridViewTextBoxColumn11.HeaderText = "ProdName";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // pEdit
+            // 
+            this.pEdit.DataPropertyName = "ProdName";
+            this.pEdit.HeaderText = "Edit";
+            this.pEdit.Name = "pEdit";
+            this.pEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.pEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.pEdit.Text = "Edit";
+            this.pEdit.UseColumnTextForButtonValue = true;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataSource = typeof(TravelExpertsData.Products);
             // 
             // groupLinkTables
             // 
@@ -284,6 +337,7 @@
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnWeb
             // 
@@ -294,40 +348,22 @@
             this.btnWeb.Text = "&Website";
             this.btnWeb.UseVisualStyleBackColor = true;
             // 
-            // productsBindingSource
+            // btnRefresh
             // 
-            this.productsBindingSource.DataSource = typeof(TravelExpertsData.Products);
-            // 
-            // productsDataGridView
-            // 
-            this.productsDataGridView.AutoGenerateColumns = false;
-            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.productsDataGridView.DataSource = this.productsBindingSource;
-            this.productsDataGridView.Location = new System.Drawing.Point(22, 19);
-            this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(352, 228);
-            this.productsDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "ProductID";
-            this.dataGridViewTextBoxColumn10.HeaderText = "ProductID";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ProdName";
-            this.dataGridViewTextBoxColumn11.HeaderText = "ProdName";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.btnRefresh.Location = new System.Drawing.Point(861, 8);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(80, 26);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.Text = "&Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+        //    this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 665);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnWeb);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupLinkTables);
@@ -344,9 +380,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.suppliersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
             this.groupProducts.ResumeLayout(false);
-            this.groupLinkTables.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            this.groupLinkTables.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -367,7 +403,6 @@
         private System.Windows.Forms.Button btnAddPkg;
         private System.Windows.Forms.GroupBox groupSuppliers;
         private System.Windows.Forms.GroupBox groupProducts;
-        private System.Windows.Forms.DataGridView suppliersDataGridView;
         private System.Windows.Forms.BindingSource suppliersBindingSource;
         private System.Windows.Forms.Button btnSupAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
@@ -377,10 +412,14 @@
         private System.Windows.Forms.Button btnLink;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnWeb;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView productsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewButtonColumn pEdit;
         private System.Windows.Forms.BindingSource productsBindingSource;
+        public System.Windows.Forms.DataGridView suppliersDataGridView;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

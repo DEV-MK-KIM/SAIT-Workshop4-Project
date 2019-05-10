@@ -29,14 +29,23 @@ namespace TravelExpertsData
                     while (reader.Read())
                     {
                         pkg = new Packages();
-
                         pkg.PackageID = (int)reader["PackageID"];
                         pkg.PkgName = reader["PkgName"].ToString();
-                        pkg.PkgStartDate = (DateTime)reader["PkgStartDate"];
-                        pkg.PkgEndDate = (DateTime)reader["PkgEndDate"];
+
+                        int col1 = reader.GetOrdinal("PkgStartDate");
+                        if (reader.IsDBNull(col1)) pkg.PkgStartDate = null;
+                        else pkg.PkgStartDate = (DateTime)reader["PkgStartDate"];
+
+                        int col2 = reader.GetOrdinal("PkgEndDate");
+                        if (reader.IsDBNull(col2)) pkg.PkgEndDate = null;
+                        else pkg.PkgEndDate = (DateTime)reader["PkgEndDate"];
+
                         pkg.PkgDesc = reader["PkgDesc"].ToString();
                         pkg.PkgBasePrice = (decimal)reader["PkgBasePrice"];
-                        pkg.PkgAgencyCommission = (decimal)reader["PkgAgencyCommission"];
+
+                        int col3 = reader.GetOrdinal("PkgAgencyCommission");
+                        if (reader.IsDBNull(col3)) pkg.PkgAgencyCommission = null;
+                        else pkg.PkgAgencyCommission = (Decimal)reader["PkgAgencyCommission"];
                         packages.Add(pkg);
                       
 
