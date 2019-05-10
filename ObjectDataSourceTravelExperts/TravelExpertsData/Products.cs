@@ -8,6 +8,7 @@ namespace TravelExpertsData
 {
     public class Products
     {
+        // Done by Dingli
         public int ProductID { get; set; } // primary key, auto increment
         public string ProdName { get; set; } // not null
 
@@ -17,7 +18,6 @@ namespace TravelExpertsData
             copy.ProductID = ProductID;
             copy.ProdName = ProdName;
             return copy;
-            // Done by Dingli
         }
     }
    

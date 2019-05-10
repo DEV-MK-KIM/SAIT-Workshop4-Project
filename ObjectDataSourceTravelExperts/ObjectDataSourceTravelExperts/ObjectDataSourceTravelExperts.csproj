@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddProduct.Designer.cs">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddPackage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="frmPackageUpdate.Designer.cs">
       <DependentUpon>frmPackageUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductsUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductsUpdate.Designer.cs">
+      <DependentUpon>frmProductsUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSuppliersAdd.cs">
       <SubType>Form</SubType>
@@ -82,11 +94,17 @@
     <EmbeddedResource Include="frmAddPackage.resx">
       <DependentUpon>frmAddPackage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddProduct.resx">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPackageUpdate.resx">
       <DependentUpon>frmPackageUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductsUpdate.resx">
+      <DependentUpon>frmProductsUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliersAdd.resx">
       <DependentUpon>frmSuppliersAdd.cs</DependentUpon>

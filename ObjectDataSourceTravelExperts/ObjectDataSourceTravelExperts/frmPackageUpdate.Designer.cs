@@ -64,7 +64,7 @@
             packageIDLabel.Size = new System.Drawing.Size(67, 13);
             packageIDLabel.TabIndex = 1;
             packageIDLabel.Text = "Package ID:";
-            packageIDLabel.Click += new System.EventHandler(this.packageIDLabel_Click);
+        //    packageIDLabel.Click += new System.EventHandler(this.packageIDLabel_Click);
             // 
             // pkgAgencyCommissionLabel
             // 
@@ -74,7 +74,7 @@
             pkgAgencyCommissionLabel.Size = new System.Drawing.Size(126, 13);
             pkgAgencyCommissionLabel.TabIndex = 3;
             pkgAgencyCommissionLabel.Text = "Pkg Agency Commission:";
-            pkgAgencyCommissionLabel.Click += new System.EventHandler(this.pkgAgencyCommissionLabel_Click);
+       //     pkgAgencyCommissionLabel.Click += new System.EventHandler(this.pkgAgencyCommissionLabel_Click);
             // 
             // pkgBasePriceLabel
             // 
@@ -84,7 +84,7 @@
             pkgBasePriceLabel.Size = new System.Drawing.Size(83, 13);
             pkgBasePriceLabel.TabIndex = 5;
             pkgBasePriceLabel.Text = "Pkg Base Price:";
-            pkgBasePriceLabel.Click += new System.EventHandler(this.pkgBasePriceLabel_Click);
+        //    pkgBasePriceLabel.Click += new System.EventHandler(this.pkgBasePriceLabel_Click);
             // 
             // pkgDescLabel
             // 
@@ -94,7 +94,7 @@
             pkgDescLabel.Size = new System.Drawing.Size(57, 13);
             pkgDescLabel.TabIndex = 7;
             pkgDescLabel.Text = "Pkg Desc:";
-            pkgDescLabel.Click += new System.EventHandler(this.pkgDescLabel_Click);
+        //    pkgDescLabel.Click += new System.EventHandler(this.pkgDescLabel_Click);
             // 
             // pkgEndDateLabel
             // 
@@ -104,7 +104,7 @@
             pkgEndDateLabel.Size = new System.Drawing.Size(77, 13);
             pkgEndDateLabel.TabIndex = 9;
             pkgEndDateLabel.Text = "Pkg End Date:";
-            pkgEndDateLabel.Click += new System.EventHandler(this.pkgEndDateLabel_Click);
+        //    pkgEndDateLabel.Click += new System.EventHandler(this.pkgEndDateLabel_Click);
             // 
             // pkgNameLabel
             // 
@@ -114,7 +114,7 @@
             pkgNameLabel.Size = new System.Drawing.Size(60, 13);
             pkgNameLabel.TabIndex = 11;
             pkgNameLabel.Text = "Pkg Name:";
-            pkgNameLabel.Click += new System.EventHandler(this.pkgNameLabel_Click);
+        //    pkgNameLabel.Click += new System.EventHandler(this.pkgNameLabel_Click);
             // 
             // pkgStartDateLabel
             // 
@@ -124,7 +124,7 @@
             pkgStartDateLabel.Size = new System.Drawing.Size(80, 13);
             pkgStartDateLabel.TabIndex = 13;
             pkgStartDateLabel.Text = "Pkg Start Date:";
-            pkgStartDateLabel.Click += new System.EventHandler(this.pkgStartDateLabel_Click);
+        //    pkgStartDateLabel.Click += new System.EventHandler(this.pkgStartDateLabel_Click);
             // 
             // packagesBindingSource
             // 
@@ -138,7 +138,7 @@
             this.packageIDTextBox.Name = "packageIDTextBox";
             this.packageIDTextBox.Size = new System.Drawing.Size(200, 20);
             this.packageIDTextBox.TabIndex = 2;
-            this.packageIDTextBox.TextChanged += new System.EventHandler(this.packageIDTextBox_TextChanged);
+        //    this.packageIDTextBox.TextChanged += new System.EventHandler(this.packageIDTextBox_TextChanged);
             // 
             // pkgAgencyCommissionTextBox
             // 
@@ -147,7 +147,7 @@
             this.pkgAgencyCommissionTextBox.Name = "pkgAgencyCommissionTextBox";
             this.pkgAgencyCommissionTextBox.Size = new System.Drawing.Size(200, 20);
             this.pkgAgencyCommissionTextBox.TabIndex = 4;
-            this.pkgAgencyCommissionTextBox.TextChanged += new System.EventHandler(this.pkgAgencyCommissionTextBox_TextChanged);
+        //    this.pkgAgencyCommissionTextBox.TextChanged += new System.EventHandler(this.pkgAgencyCommissionTextBox_TextChanged);
             // 
             // pkgBasePriceTextBox
             // 
@@ -156,7 +156,7 @@
             this.pkgBasePriceTextBox.Name = "pkgBasePriceTextBox";
             this.pkgBasePriceTextBox.Size = new System.Drawing.Size(200, 20);
             this.pkgBasePriceTextBox.TabIndex = 6;
-            this.pkgBasePriceTextBox.TextChanged += new System.EventHandler(this.pkgBasePriceTextBox_TextChanged);
+        //    this.pkgBasePriceTextBox.TextChanged += new System.EventHandler(this.pkgBasePriceTextBox_TextChanged);
             // 
             // pkgDescTextBox
             // 
@@ -165,7 +165,7 @@
             this.pkgDescTextBox.Name = "pkgDescTextBox";
             this.pkgDescTextBox.Size = new System.Drawing.Size(200, 20);
             this.pkgDescTextBox.TabIndex = 8;
-            this.pkgDescTextBox.TextChanged += new System.EventHandler(this.pkgDescTextBox_TextChanged);
+        //    this.pkgDescTextBox.TextChanged += new System.EventHandler(this.pkgDescTextBox_TextChanged);
             // 
             // pkgEndDateDateTimePicker
             // 
@@ -174,7 +174,7 @@
             this.pkgEndDateDateTimePicker.Name = "pkgEndDateDateTimePicker";
             this.pkgEndDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.pkgEndDateDateTimePicker.TabIndex = 10;
-            this.pkgEndDateDateTimePicker.ValueChanged += new System.EventHandler(this.pkgEndDateDateTimePicker_ValueChanged);
+        //    this.pkgEndDateDateTimePicker.ValueChanged += new System.EventHandler(this.pkgEndDateDateTimePicker_ValueChanged);
             // 
             // pkgNameTextBox
             // 
@@ -183,7 +183,7 @@
             this.pkgNameTextBox.Name = "pkgNameTextBox";
             this.pkgNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.pkgNameTextBox.TabIndex = 12;
-            this.pkgNameTextBox.TextChanged += new System.EventHandler(this.pkgNameTextBox_TextChanged);
+        //    this.pkgNameTextBox.TextChanged += new System.EventHandler(this.pkgNameTextBox_TextChanged);
             // 
             // pkgStartDateDateTimePicker
             // 
@@ -192,7 +192,7 @@
             this.pkgStartDateDateTimePicker.Name = "pkgStartDateDateTimePicker";
             this.pkgStartDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.pkgStartDateDateTimePicker.TabIndex = 14;
-            this.pkgStartDateDateTimePicker.ValueChanged += new System.EventHandler(this.pkgStartDateDateTimePicker_ValueChanged);
+        //    this.pkgStartDateDateTimePicker.ValueChanged += new System.EventHandler(this.pkgStartDateDateTimePicker_ValueChanged);
             // 
             // btnAccept
             // 
