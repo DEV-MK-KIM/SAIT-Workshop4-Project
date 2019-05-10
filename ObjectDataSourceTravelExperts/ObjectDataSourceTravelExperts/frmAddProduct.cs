@@ -26,11 +26,10 @@ namespace ObjectDataSourceTravelExperts
         {
             products = new Products();
             this.putProducts(products);
-            frmMain mainForm = new frmMain();
+            //frmMain mainForm = new frmMain();
             try
             {
                 products.ProductID = Products_DB.AddProducts(products);
-
                 this.DialogResult = DialogResult.OK;
                 MessageBox.Show("Successfully added", "Success");
             }
@@ -42,12 +41,12 @@ namespace ObjectDataSourceTravelExperts
 
         private void putProducts(Products products)
         {
-            products.ProductID = Convert.ToInt32(txtProductID.Text);
+            //products.ProductID = Convert.ToInt32(txtProductID.Text);
             products.ProdName = txtProdName.Text;
         }
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            Close();
+            this.DialogResult = DialogResult.No;
         }
     }
 }

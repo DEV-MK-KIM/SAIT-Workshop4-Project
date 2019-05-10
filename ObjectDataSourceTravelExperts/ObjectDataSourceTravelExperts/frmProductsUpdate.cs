@@ -27,7 +27,7 @@ namespace ObjectDataSourceTravelExperts
                 bool success = Products_DB.UpdateProducts(products, oldProducts);
                 if (success)
                 {
-                    MessageBox.Show("Update successful", "Success");
+                    MessageBox.Show("Update successful", "Good News");
                     this.DialogResult = DialogResult.OK;
                 }
                 else
@@ -46,7 +46,9 @@ namespace ObjectDataSourceTravelExperts
         }
         private void frmProductsUpdate_Load(object sender, EventArgs e)
         {
+            List<Products> products = Products_DB.GetProducts();
             oldProducts = products.Clone();
+            //oldProducts = products.Clone();
             productsBindingSource.Clear();
             productsBindingSource.Add(products);
             txtProdName.Focus();

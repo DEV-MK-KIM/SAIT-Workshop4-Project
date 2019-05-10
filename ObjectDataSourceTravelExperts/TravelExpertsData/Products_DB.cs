@@ -71,26 +71,34 @@ namespace TravelExpertsData
             bool success = false; // did not update
 
             // connection
-            using (SqlConnection con = TravelExperts_DB.GetConnection())
+            SqlConnection con = TravelExperts_DB.GetConnection();
             // update command
-            {
-                string updateStatement =
+
+            string updateStatement =
                   "UPDATE Products SET " +
                   " ProdName = @NewProdName " + // Only Update ProductName
                   "WHERE ProductID = @OldProductID "; //+" AND ProdName = @OldProdName";
 
-                using (SqlCommand cmd = new SqlCommand(updateStatement, con))
+            SqlCommand cmd = new SqlCommand(updateStatement, con);
+            cmd.Parameters.AddWithValue("@NewProdName", newProd.ProdName);
+            cmd.Parameters.AddWithValue("@OldProductID", oldProd.ProductID);
+            cmd.Parameters.AddWithValue("@OldProdName", oldProd.ProdName);
+            try
+            {
+                con.Open();
+                int count = cmd.ExecuteNonQuery();
+                if (count > 0)
                 {
-                    cmd.Parameters.AddWithValue("@NewProdName", newProd.ProdName);
-                    cmd.Parameters.AddWithValue("@OldProductID", oldProd.ProductID);
-                    cmd.Parameters.AddWithValue("@OldProdName", oldProd.ProdName);
-
-                    con.Open();
-
-                    int count = cmd.ExecuteNonQuery();
-                    if (count > 0)
-                        success = true;
+                    success = true;
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
             }
             return success;
         }

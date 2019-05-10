@@ -76,6 +76,7 @@
             this.txtProductID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductID", true));
             this.txtProductID.Location = new System.Drawing.Point(84, 22);
             this.txtProductID.Name = "txtProductID";
+            this.txtProductID.ReadOnly = true;
             this.txtProductID.Size = new System.Drawing.Size(143, 20);
             this.txtProductID.TabIndex = 3;
             // 
@@ -112,7 +113,6 @@
             this.Controls.Add(this.txtProdName);
             this.Name = "frmAddProduct";
             this.Text = "frmAddProduct";
-            
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
