@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CustomerMaintenance
+namespace ObjectDataSourceTravelExperts
 {
     /// <summary>
     /// Provides static methods for validating data.

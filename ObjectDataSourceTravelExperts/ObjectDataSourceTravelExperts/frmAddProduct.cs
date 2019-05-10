@@ -22,11 +22,6 @@ namespace ObjectDataSourceTravelExperts
             InitializeComponent();
         }
 
-        private void frmAddProduct_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAccept_Click(object sender, EventArgs e)
         {
             products = new Products();
@@ -38,7 +33,6 @@ namespace ObjectDataSourceTravelExperts
 
                 this.DialogResult = DialogResult.OK;
                 MessageBox.Show("Successfully added", "Success");
-
             }
             catch (Exception ex)
             {

@@ -11,17 +11,15 @@ using TravelExpertsData;
 
 namespace ObjectDataSourceTravelExperts
 {
-    public partial class frmSuppliersUpdate : Form
+    public partial class frmProductsUpdate : Form
     {
         public Products products;
         public Products oldProducts;
-        private object txtProdName;
 
-        public frmSuppliersUpdate()
+        public frmProductsUpdate()
         {
             InitializeComponent();
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -46,7 +44,6 @@ namespace ObjectDataSourceTravelExperts
                 //this.DialogResult = DialogResult.Retry;
             }
         }
-
         private void frmProductsUpdate_Load(object sender, EventArgs e)
         {
             oldProducts = products.Clone();
@@ -54,8 +51,7 @@ namespace ObjectDataSourceTravelExperts
             productsBindingSource.Add(products);
             txtProdName.Focus();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void butnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Retry; // anything but ok
         }

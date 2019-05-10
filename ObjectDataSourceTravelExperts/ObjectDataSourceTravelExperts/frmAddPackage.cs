@@ -11,10 +11,12 @@ using TravelExpertsData;
 
 namespace ObjectDataSourceTravelExperts
 {
+    //Author: Lee Neufeld
+    // May/10/2019
     public partial class frmAddPackage : Form
     {
         public bool addPackage;
-        public Packages package; // current supplier
+        public Packages package; // current package
         public frmAddPackage()
         {
             InitializeComponent();
@@ -22,38 +24,63 @@ namespace ObjectDataSourceTravelExperts
 
         private void frmAddPackage_Load(object sender, EventArgs e)
         {
-            if (addPackage) // processing Add
-            {
-                package = new Packages();
-                this.putPackage(package);
 
-                try
+        }
+
+        private void putPackage(Packages package)
+        {
+            try
+            {
+                package.PkgName = txtPkgName.Text;
+                package.PkgStartDate = Convert.ToDateTime(txtDateStart.Text);
+                package.PkgEndDate = Convert.ToDateTime(txtDateEnd.Text);
+                package.PkgDesc = txtPkgDesc.Text;
+                package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
+                package.PkgAgencyCommission = Convert.ToDecimal(txtPkgCommission.Text);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private bool IsValidData()
+        {
+            return
+                Validator.IsPresent(txtPkgName) &&
+                Validator.IsPresent(txtPkgCommission) &&
+                Validator.IsPresent(txtPkgBasePrice) &&
+                Validator.IsPresent(txtPkgDesc) &&
+                Validator.IsPresent(txtDateEnd) &&
+                Validator.IsPresent(txtDateStart);
+        }
+
+
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                if (addPackage) // processing Add
                 {
-                    package.PackageID = Packages_DB.AddPackage(package);
-                    this.DialogResult = DialogResult.OK;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    package = new Packages();
+                    this.putPackage(package);
+
+                    try
+                    {
+                        package.PackageID = Packages_DB.AddPackage(package);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
             }
         }
-    
-    private void putPackage(Packages package)
-    {
-            package.PkgName = txtPkgName.Text;
-            package.PkgStartDate = Convert.ToDateTime(txtDateStart.Text);
-            package.PkgEndDate = Convert.ToDateTime(txtDateEnd.Text);
-            package.PkgDesc = txtPkgCommission.Text;
-            package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
-            package.PkgAgencyCommission = Convert.ToDecimal(txtPkgCommission.Text);
-        
-        
-        
-        
-        
 
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
         }
-}
+    }
 }
