@@ -82,6 +82,7 @@
             this.txtSupName.Name = "txtSupName";
             this.txtSupName.Size = new System.Drawing.Size(176, 20);
             this.txtSupName.TabIndex = 8;
+            this.txtSupName.TextChanged += new System.EventHandler(this.txtSupName_TextChanged);
             // 
             // txtSupplierID
             // 

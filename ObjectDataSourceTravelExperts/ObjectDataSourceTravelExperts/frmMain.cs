@@ -21,18 +21,15 @@ namespace ObjectDataSourceTravelExperts
         {
             InitializeComponent();
         }
-
         List<Packages> packages = null;
         List<Suppliers> suppliers = null;
         List<Products> products = null;
-
         public Suppliers supplier;
         Packages package;
         public Products product;
 
         private void frmMain_Load(object sender, EventArgs e)
-        {
-            
+        {            
             packages = Packages_DB.GetAllPackages();
             packagesDataGridView.DataSource = packages;
 
@@ -41,9 +38,7 @@ namespace ObjectDataSourceTravelExperts
             suppliersDataGridView.DataSource = suppliers;
 
             products = Products_DB.GetProducts();
-            productsDataGridView.DataSource = products;
-
-
+            productsDataGridView.DataSource = products;                                 
         }
 
         private void suppliersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -152,5 +147,30 @@ namespace ObjectDataSourceTravelExperts
                 }
             }
         }
+
+
+        // Mohamed: This button should refresh tables on the main form, Mohamed 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            frmMain_Load(btnRefresh, null);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLink_Click(object sender, EventArgs e)
+        {
+            frmReports repo = new frmReports();
+            repo.Show();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+   
