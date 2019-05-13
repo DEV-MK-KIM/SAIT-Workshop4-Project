@@ -42,8 +42,8 @@
             this.txtPkgName = new System.Windows.Forms.TextBox();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtDateStart = new System.Windows.Forms.TextBox();
-            this.txtDateEnd = new System.Windows.Forms.TextBox();
+            this.txtDateStart = new System.Windows.Forms.DateTimePicker();
+            this.txtDateEnd = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -85,16 +85,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 182);
+            this.label5.Location = new System.Drawing.Point(12, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(158, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Pkg Start Date (YYYY/MM/DD)";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 213);
+            this.label6.Location = new System.Drawing.Point(12, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 5;
@@ -116,6 +117,7 @@
             this.txtPkgId.Name = "txtPkgId";
             this.txtPkgId.Size = new System.Drawing.Size(200, 20);
             this.txtPkgId.TabIndex = 7;
+            this.txtPkgId.TextChanged += new System.EventHandler(this.txtPkgId_TextChanged);
             // 
             // txtPkgCommission
             // 
@@ -140,9 +142,9 @@
             // 
             // txtPkgName
             // 
-            this.txtPkgName.Location = new System.Drawing.Point(182, 206);
+            this.txtPkgName.Location = new System.Drawing.Point(182, 188);
             this.txtPkgName.Name = "txtPkgName";
-            this.txtPkgName.Size = new System.Drawing.Size(197, 20);
+            this.txtPkgName.Size = new System.Drawing.Size(200, 20);
             this.txtPkgName.TabIndex = 11;
             // 
             // btnAccept
@@ -167,23 +169,26 @@
             // 
             // txtDateStart
             // 
-            this.txtDateStart.Location = new System.Drawing.Point(182, 177);
+            this.txtDateStart.Location = new System.Drawing.Point(182, 217);
             this.txtDateStart.Name = "txtDateStart";
             this.txtDateStart.Size = new System.Drawing.Size(200, 20);
-            this.txtDateStart.TabIndex = 16;
+            this.txtDateStart.TabIndex = 18;
+            this.txtDateStart.Tag = "Start Date";
+            this.txtDateStart.ValueChanged += new System.EventHandler(this.txtDateStart_ValueChanged);
             // 
             // txtDateEnd
             // 
-            this.txtDateEnd.Location = new System.Drawing.Point(179, 239);
+            this.txtDateEnd.AllowDrop = true;
+            this.txtDateEnd.Location = new System.Drawing.Point(182, 242);
             this.txtDateEnd.Name = "txtDateEnd";
             this.txtDateEnd.Size = new System.Drawing.Size(200, 20);
-            this.txtDateEnd.TabIndex = 17;
+            this.txtDateEnd.TabIndex = 19;
             // 
             // frmAddPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 337);
+            this.ClientSize = new System.Drawing.Size(409, 339);
             this.Controls.Add(this.txtDateEnd);
             this.Controls.Add(this.txtDateStart);
             this.Controls.Add(this.btnCancel);
@@ -201,7 +206,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddPackage";
-            this.Text = "frmAddPackage";
+            this.Text = "Add Package";
             this.Load += new System.EventHandler(this.frmAddPackage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,7 +229,7 @@
         private System.Windows.Forms.TextBox txtPkgName;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtDateStart;
-        private System.Windows.Forms.TextBox txtDateEnd;
+        private System.Windows.Forms.DateTimePicker txtDateStart;
+        private System.Windows.Forms.DateTimePicker txtDateEnd;
     }
 }
