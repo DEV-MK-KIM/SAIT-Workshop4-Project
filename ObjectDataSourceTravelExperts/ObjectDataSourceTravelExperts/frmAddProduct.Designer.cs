@@ -44,18 +44,18 @@
             // prodNameLabel
             // 
             prodNameLabel.AutoSize = true;
-            prodNameLabel.Location = new System.Drawing.Point(15, 67);
+            prodNameLabel.Location = new System.Drawing.Point(17, 82);
             prodNameLabel.Name = "prodNameLabel";
-            prodNameLabel.Size = new System.Drawing.Size(63, 13);
+            prodNameLabel.Size = new System.Drawing.Size(81, 17);
             prodNameLabel.TabIndex = 0;
             prodNameLabel.Text = "Prod Name:";
             // 
             // productIDLabel
             // 
             productIDLabel.AutoSize = true;
-            productIDLabel.Location = new System.Drawing.Point(17, 25);
+            productIDLabel.Location = new System.Drawing.Point(20, 31);
             productIDLabel.Name = "productIDLabel";
-            productIDLabel.Size = new System.Drawing.Size(61, 13);
+            productIDLabel.Size = new System.Drawing.Size(80, 17);
             productIDLabel.TabIndex = 2;
             productIDLabel.Text = "Product ID:";
             // 
@@ -66,24 +66,27 @@
             // txtProdName
             // 
             this.txtProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
-            this.txtProdName.Location = new System.Drawing.Point(84, 64);
+            this.txtProdName.Location = new System.Drawing.Point(98, 79);
+            this.txtProdName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProdName.Name = "txtProdName";
-            this.txtProdName.Size = new System.Drawing.Size(143, 20);
+            this.txtProdName.Size = new System.Drawing.Size(166, 24);
             this.txtProdName.TabIndex = 1;
             // 
             // txtProductID
             // 
             this.txtProductID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductID", true));
-            this.txtProductID.Location = new System.Drawing.Point(84, 22);
+            this.txtProductID.Location = new System.Drawing.Point(98, 27);
+            this.txtProductID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(143, 20);
+            this.txtProductID.Size = new System.Drawing.Size(166, 24);
             this.txtProductID.TabIndex = 3;
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(73, 114);
+            this.btnAccept.Location = new System.Drawing.Point(85, 140);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(75, 23);
+            this.btnAccept.Size = new System.Drawing.Size(87, 28);
             this.btnAccept.TabIndex = 12;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
@@ -91,9 +94,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(154, 114);
+            this.btnCancel.Location = new System.Drawing.Point(180, 140);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(87, 28);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -101,18 +105,19 @@
             // 
             // frmAddProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 163);
+            this.ClientSize = new System.Drawing.Size(405, 201);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(productIDLabel);
             this.Controls.Add(this.txtProductID);
             this.Controls.Add(prodNameLabel);
             this.Controls.Add(this.txtProdName);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAddProduct";
             this.Text = "frmAddProduct";
-            
+            this.Load += new System.EventHandler(this.frmAddProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

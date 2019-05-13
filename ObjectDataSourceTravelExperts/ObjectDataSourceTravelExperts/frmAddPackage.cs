@@ -82,5 +82,20 @@ namespace ObjectDataSourceTravelExperts
         {
             this.DialogResult = DialogResult.No;
         }
+
+        private void txtDateStart_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPkgId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

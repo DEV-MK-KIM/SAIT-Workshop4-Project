@@ -49,6 +49,11 @@ namespace ObjectDataSourceTravelExperts
         {
             Close();
         }
+
+        private void frmAddProduct_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
