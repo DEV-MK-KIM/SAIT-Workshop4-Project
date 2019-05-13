@@ -94,5 +94,39 @@ namespace TravelExpertsData
             }
             return success;
         }
+
+        //Created by Mohmaed to display all packages
+        public static DataTable GetAllPackages()
+
+        {
+            DataTable pkgtable = new DataTable();
+
+            SqlConnection conn = TravelExperts_DB.GetConnection();
+            conn.Open();
+            try
+            {
+              
+                string statement = "select s.SupName, pk.pkgname, " +
+                    "p.prodname from Suppliers s, Packages pk, " +
+                    "Packages_Products_Suppliers pps, Products_Suppliers ps, products p " +
+                    "where pk.PackageId = pps.PackageId and pps.ProductSupplierId = ps.ProductSupplierId " +
+                    "and ps.SupplierId = s.SupplierId and p.ProductId = ps.ProductId";
+                SqlCommand comm = new SqlCommand(statement, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(comm);
+                adapter.Fill(pkgtable);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { conn.Close(); }
+
+
+            return pkgtable;
+
+        }
+
+
     }
 }

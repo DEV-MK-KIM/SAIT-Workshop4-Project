@@ -66,5 +66,10 @@ namespace ObjectDataSourceTravelExperts
         {
             Close();
         }
+
+        private void txtSupName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
