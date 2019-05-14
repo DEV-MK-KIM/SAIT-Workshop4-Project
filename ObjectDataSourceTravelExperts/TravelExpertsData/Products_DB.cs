@@ -77,8 +77,8 @@ namespace TravelExpertsData
             string updateStatement =
                   "UPDATE Products SET " +
                   " ProdName = @NewProdName " + // Only Update ProductName
-                  "WHERE ProductID = @OldProductID "; //+" AND ProdName = @OldProdName";
-
+                  "WHERE ProductID = @OldProductID " +//+" AND ProdName = @OldProdName";
+                   "AND ProductName = @OldProdName ";
             SqlCommand cmd = new SqlCommand(updateStatement, con);
             cmd.Parameters.AddWithValue("@NewProdName", newProd.ProdName);
             cmd.Parameters.AddWithValue("@OldProductID", oldProd.ProductID);

@@ -14,7 +14,7 @@ namespace ObjectDataSourceTravelExperts
     public partial class frmProductsUpdate : Form
     {
         public Products products;
-        public Products oldProducts;
+        private Products oldProducts;
 
         public frmProductsUpdate()
         {
@@ -46,11 +46,10 @@ namespace ObjectDataSourceTravelExperts
         }
         private void frmProductsUpdate_Load(object sender, EventArgs e)
         {
-            List<Products> products = Products_DB.GetProducts();
+            List<Products> product = Products_DB.GetProducts();
             oldProducts = products.Clone();
-            //oldProducts = products.Clone();
             productsBindingSource.Clear();
-            productsBindingSource.Add(products);
+            productsBindingSource.Add(product);
             txtProdName.Focus();
         }
         private void butnCancel_Click(object sender, EventArgs e)

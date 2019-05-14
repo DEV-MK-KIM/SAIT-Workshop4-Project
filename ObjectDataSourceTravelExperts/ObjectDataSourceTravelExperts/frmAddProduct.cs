@@ -41,12 +41,16 @@ namespace ObjectDataSourceTravelExperts
 
         private void putProducts(Products products)
         {
-            //products.ProductID = Convert.ToInt32(txtProductID.Text);
             products.ProdName = txtProdName.Text;
         }
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.No;
+        }
+
+        private void frmAddProduct_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

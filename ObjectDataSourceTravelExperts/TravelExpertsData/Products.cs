@@ -15,8 +15,8 @@ namespace TravelExpertsData
         public Products Clone()
         {
             Products copy = new Products();
-            copy.ProductID = ProductID;
-            copy.ProdName = ProdName;
+            copy.ProductID = this.ProductID;
+            copy.ProdName = this.ProdName;
             return copy;
         }
     }
