@@ -34,31 +34,61 @@ namespace ObjectDataSourceTravelExperts
         // adds package updates to database
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            try
+            if (isValidEndDate())
             {
-                bool success = Packages_DB.UpdatePackage(oldPackage, package);
-                if (success)
+                try
                 {
-                    MessageBox.Show("Update Successful", "Good News");
-                    this.DialogResult = DialogResult.OK;
+                    bool success = Packages_DB.UpdatePackage(oldPackage, package);
+                    if (success)
+                    {
+                        MessageBox.Show("Update Successful", "Good News");
+                        this.DialogResult = DialogResult.OK;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Another user updated or deleted the record. Try again.", "Concurrency Issue");
+                        this.DialogResult = DialogResult.Retry;// closes the form
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error during update:" + ex.Message, ex.GetType().ToString());
 
                 }
-                else
-                {
-                    MessageBox.Show("Another user updated or deleted the record. Try again.", "Concurrency Issue");
-                    this.DialogResult = DialogResult.Retry;// closes the form
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error during update:" + ex.Message, ex.GetType().ToString());
-               
             }
         }
         // closes form
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Retry;
+        }
+
+        private bool isValidEndDate()
+        {
+            bool valid = true; // empty is valid
+            DateTime endDate;
+
+
+            if (pkgStartDateDateTimePicker.Text != "")// if not empty
+            {
+                if (DateTime.TryParse(pkgEndDateDateTimePicker.Text, out endDate))//valid date
+                {
+                    DateTime startDate = Convert.ToDateTime(pkgStartDateDateTimePicker.Text);
+
+                    if (startDate >= endDate)// start date is earlier than end date
+                    {
+                        valid = false;
+                        MessageBox.Show("Start date must be earlier than end date", "Data Error");
+
+                        pkgStartDateDateTimePicker.Focus();
+                    }
+
+
+                }
+
+            }
+            return valid;
         }
 
     }
