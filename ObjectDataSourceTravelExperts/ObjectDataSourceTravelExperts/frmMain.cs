@@ -30,7 +30,7 @@ namespace ObjectDataSourceTravelExperts
 
         private void frmMain_Load(object sender, EventArgs e)
         {            
-            packages = Packages_DB.GetAllPackages();
+            packages = Packages_DB.GetAllPackages();// completed by Lee Neufeld
             packagesDataGridView.DataSource = packages;
 
             //Suppliers 
@@ -63,13 +63,14 @@ namespace ObjectDataSourceTravelExperts
             }
         }
 
+        // completed by Lee Neufeld
         private void packagesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == EDIT_PACKAGES_INDX)// user click in the buttons column
             {
-                //oldCustomer = customers[e.RowIndex].Clone(); // copy of current customer
+                
                 frmPackageUpdate updateForm = new frmPackageUpdate();
-                updateForm.package = packages[e.RowIndex];// pass current customer to the update form
+                updateForm.package = packages[e.RowIndex];// pass current package to the update form
                 DialogResult result = updateForm.ShowDialog(); // display modal
                 if (result == DialogResult.OK)// update accepted
                 {
@@ -79,7 +80,7 @@ namespace ObjectDataSourceTravelExperts
                 }
                 else // update cancelled
                 {
-                    //customers[e.RowIndex] = oldCustomer;
+                    
                     packages = Packages_DB.GetAllPackages();
                     packagesDataGridView.DataSource = packages;
                 }
