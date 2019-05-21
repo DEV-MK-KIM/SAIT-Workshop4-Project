@@ -53,26 +53,55 @@ namespace ObjectDataSourceTravelExperts
                 Validator.IsPresent(txtDateEnd) &&
                 Validator.IsPresent(txtDateStart);
         }
+        private bool isValidEndDate()
+        {
+            bool valid = true; // empty is valid
+            DateTime endDate;
+
+
+            if (txtDateStart.Text != "")// if not empty
+            {
+                if (DateTime.TryParse(txtDateEnd.Text, out endDate))//valid date
+                {
+                    DateTime startDate = Convert.ToDateTime(txtDateStart.Text);
+
+                    if (startDate >= endDate)// start date is earlier than end date
+                    {
+                        valid = false;
+                        MessageBox.Show("Start date must be earlier than end date", "Data Error");
+
+                        txtDateStart.Focus();
+                    }
+
+
+                }
+
+            }
+            return valid;
+        }
 
 
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (IsValidData())
+            if (isValidEndDate())
             {
-                if (addPackage) // processing Add
+                if (IsValidData())
                 {
-                    package = new Packages();
-                    this.putPackage(package);
+                    if (addPackage) // processing Add
+                    {
+                        package = new Packages();
+                        this.putPackage(package);
 
-                    try
-                    {
-                        package.PackageID = Packages_DB.AddPackage(package);
-                        this.DialogResult = DialogResult.OK;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                        try
+                        {
+                            package.PackageID = Packages_DB.AddPackage(package);
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, ex.GetType().ToString());
+                        }
                     }
                 }
             }
