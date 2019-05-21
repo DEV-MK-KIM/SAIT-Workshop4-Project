@@ -21,15 +21,15 @@ namespace ObjectDataSourceTravelExperts
 {
     public partial class frmReports : Form
     {
-        private bool IsValidData(Control control)
-        {
-            return
-                Validator.IsPresent(control); /*&&*/
-                //Validator. (txtProductId) &&
-                //Validator.IsPresent(txtProSupId) &&
-                //Validator.IsPresent(txtSupplierId);
+        //private bool IsValidData(Control control)
+        //{
+        //    return
+        //        Validator.IsPresent(control); /*&&*/
+        //        //Validator. (txtProductId) &&
+        //        //Validator.IsPresent(txtProSupId) &&
+        //        //Validator.IsPresent(txtSupplierId);
              
-        }
+        //}
         SqlConnection con = new SqlConnection (@"Data Source=localhost\sqlexpress;Initial Catalog=TravelExperts;Integrated Security=True");
        
         public frmReports()
@@ -42,19 +42,28 @@ namespace ObjectDataSourceTravelExperts
         {
             //int productID = Convert.ToInt32(txtProductId.Text);
             //int SupplierID = Convert.ToInt32(txtSupplierId.Text);
-                       
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into Products_Suppliers values ('" + txtProductId.Text + "', '" + txtSupplierId.Text + "')";
-            cmd.ExecuteNonQuery();
-            txtProductId.Text = "";
-            txtSupplierId.Text = "";
-            txtProSupId.Text = "";
-            txtPackageId.Text = "";
 
-            displayData();
-            MessageBox.Show("Supplier has been assigned to product successfully");
+            if (Validator.IsPresent(txtProductId) &&
+               Validator.IsPresent(txtSupplierId) &&
+               Validator.IsInteger(txtSupplierId) &&
+               Validator.IsInteger(txtProductId) &&
+               Validator.IsNonNegativeInteger(txtProductId) &&
+               Validator.IsNonNegativeInteger(txtSupplierId))
+                
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into Products_Suppliers values ('" + txtProductId.Text + "', '" + txtSupplierId.Text + "')";
+                cmd.ExecuteNonQuery();
+                txtProductId.Text = "";
+                txtSupplierId.Text = "";
+                txtProSupId.Text = "";
+                txtPackageId.Text = "";
+
+                displayData();
+                MessageBox.Show("Supplier has been assigned to product successfully");
+            }
         }
 
         // To diplay the infomrtion in the DataGridView
@@ -95,6 +104,10 @@ namespace ObjectDataSourceTravelExperts
         {
             dataGridViewLink.DataSource = null;
             dataGridViewLink.Refresh();
+            txtProductId.Text = "";
+            txtSupplierId.Text = "";
+            txtProSupId.Text = "";
+            txtPackageId.Text = "";
 
         }
 
@@ -107,74 +120,100 @@ namespace ObjectDataSourceTravelExperts
         // Search Function for Product ID
         private void btnSearchProduct_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select ps.ProductId, s.SupplierId, s.SupName, p.ProdName from Products_Suppliers ps, Products p, Suppliers s " +
-                "where ps.ProductId ='" + txtProductId.Text + "' and p.ProductId = ps.ProductId and ps.SupplierId = s.SupplierId";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataGridViewLink.DataSource = dt;
+            if (Validator.IsPresent(txtProductId) &&
+            Validator.IsInteger(txtProductId) &&
+            Validator.IsNonNegativeInteger(txtProductId))
 
-            con.Close();
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select ps.ProductId, s.SupplierId, s.SupName, p.ProdName from Products_Suppliers ps, Products p, Suppliers s " +
+                    "where ps.ProductId ='" + txtProductId.Text + "' and p.ProductId = ps.ProductId and ps.SupplierId = s.SupplierId";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridViewLink.DataSource = dt;
+
+                con.Close();
+            }
         }
 
 
         // Search Function for Supplier ID
         private void btnSearchSup_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select ps.ProductId, s.SupplierId, s.SupName, p.ProdName from Products_Suppliers ps, Products p, Suppliers s " +
-                "where ps.SupplierId ='" + txtSupplierId.Text + "' and ps.SupplierId = s.SupplierId and p.ProductId = ps.ProductId  ";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataGridViewLink.DataSource = dt;
+            if (
+            Validator.IsPresent(txtSupplierId) &&
+            Validator.IsInteger(txtSupplierId) &&
+            Validator.IsNonNegativeInteger(txtSupplierId))
 
-            con.Close();
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select ps.ProductId, s.SupplierId, s.SupName, p.ProdName from Products_Suppliers ps, Products p, Suppliers s " +
+                    "where ps.SupplierId ='" + txtSupplierId.Text + "' and ps.SupplierId = s.SupplierId and p.ProductId = ps.ProductId  ";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridViewLink.DataSource = dt;
+
+                con.Close();
+            }
         }
 
         // Search Function for Package ID
         private void btnSearchPackage_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select pps.ProductSupplierId, pps.PackageId, s.SupplierId, s.SupName, pk.pkgname " +
-                "from Suppliers s, Packages pk, Packages_Products_Suppliers pps, Products_Suppliers ps " +
-                "where pps.PackageId='" + txtPackageId.Text + "' and pps.ProductSupplierId = ps.ProductSupplierId and " +
-                "ps.SupplierId = s.SupplierId and pk.PackageId = pps.PackageId";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataGridViewLink.DataSource = dt;
+            if (Validator.IsPresent(txtPackageId) &&
+                Validator.IsInteger(txtPackageId) &&
+                Validator.IsNonNegativeInteger(txtPackageId))
 
-            con.Close();
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select pps.ProductSupplierId, pps.PackageId, s.SupplierId, s.SupName, pk.pkgname " +
+                    "from Suppliers s, Packages pk, Packages_Products_Suppliers pps, Products_Suppliers ps " +
+                    "where pps.PackageId='" + txtPackageId.Text + "' and pps.ProductSupplierId = ps.ProductSupplierId and " +
+                    "ps.SupplierId = s.SupplierId and pk.PackageId = pps.PackageId";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridViewLink.DataSource = dt;
+
+                con.Close();
+            }
         }
 
         private void btnAssignPackage_Click(object sender, EventArgs e)
         {
-            //Validator vv = new Validator();
+            //Validator 
+            if (Validator.IsPresent(txtPackageId) &&
+            Validator.IsPresent(txtProSupId) &&
+            Validator.IsInteger(txtPackageId) &&
+            Validator.IsInteger(txtProSupId) &&
+            Validator.IsNonNegativeInteger(txtPackageId) &&
+            Validator.IsNonNegativeInteger(txtProSupId))
 
-            //if (txtPackageId.Text)
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into Packages_Products_Suppliers values ('" + txtPackageId.Text + "', '" + txtProSupId.Text + "')";
-            cmd.ExecuteNonQuery();
-            txtProductId.Text = "";
-            txtSupplierId.Text = "";
-            txtProSupId.Text = "";
-            txtPackageId.Text = "";
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into Packages_Products_Suppliers values ('" + txtPackageId.Text + "', '" + txtProSupId.Text + "')";
+                cmd.ExecuteNonQuery();
+                txtProductId.Text = "";
+                txtSupplierId.Text = "";
+                txtProSupId.Text = "";
+                txtPackageId.Text = "";
 
-            displayData();
-            MessageBox.Show("Product has been assigned to package successfully");
+                displayData();
+                MessageBox.Show("Product has been assigned to package successfully");
+            }
         }
     }
 }
