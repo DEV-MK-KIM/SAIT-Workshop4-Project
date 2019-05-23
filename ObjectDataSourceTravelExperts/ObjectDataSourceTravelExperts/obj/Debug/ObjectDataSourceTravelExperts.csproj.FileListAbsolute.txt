@@ -185,3 +185,6 @@ C:\Users\823721\source\repos\SAIT-Workshop4-ProjectVer3\SAIT-Workshop4-Project\O
 C:\Users\823721\source\repos\SAIT-Workshop4-ProjectVer3\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\ObjectDataSourceTravelExperts\obj\Debug\ObjectDataSourceTravelExperts.exe
 C:\Users\823721\source\repos\SAIT-Workshop4-ProjectVer3\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\ObjectDataSourceTravelExperts\obj\Debug\ObjectDataSourceTravelExperts.pdb
 C:\Users\340903\Source\Repos\chapstrm\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\ObjectDataSourceTravelExperts\obj\Debug\ObjectDataSourceTravelExperts.frmReports.resources
+C:\Users\662580\Source\Repos\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\ObjectDataSourceTravelExperts\obj\Debug\ObjectDataSourceTravelExperts.frmAddProduct.resources
+C:\Users\662580\Source\Repos\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\ObjectDataSourceTravelExperts\obj\Debug\ObjectDataSourceTravelExperts.frmProductsUpdate.resources
+C:\Users\662580\Source\Repos\SAIT-Workshop4-Project\ObjectDataSourceTravelExperts\ObjectDataSourceTravelExperts\obj\Debug\ObjectDataSourceTravelExperts.frmReports.resources
