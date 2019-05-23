@@ -14,7 +14,7 @@ namespace ObjectDataSourceTravelExperts
     public partial class frmProductsUpdate : Form
     {
         public Products products;
-        private Products oldProducts;
+        public Products oldProducts;
 
         public frmProductsUpdate()
         {
