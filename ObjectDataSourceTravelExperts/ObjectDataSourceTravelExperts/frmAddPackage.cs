@@ -80,27 +80,44 @@ namespace ObjectDataSourceTravelExperts
             return valid;
         }
 
+        private bool isValidCommission()
+        {
+            bool valid = true;
+            decimal comm = Convert.ToDecimal(txtPkgCommission.Text);
+            decimal basePrc = Convert.ToDecimal(txtPkgBasePrice.Text);
+            if (comm >= basePrc)
+            {
+                valid = false;
+                MessageBox.Show("Commission cannot be greater than the base price", "Data Error");
+                txtPkgCommission.Focus();
+            }
+            return valid;
+        }
+
 
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (isValidEndDate())
+            if (isValidCommission())
             {
-                if (IsValidData())
+                if (isValidEndDate())
                 {
-                    if (addPackage) // processing Add
+                    if (IsValidData())
                     {
-                        package = new Packages();
-                        this.putPackage(package);
+                        if (addPackage) // processing Add
+                        {
+                            package = new Packages();
+                            this.putPackage(package);
 
-                        try
-                        {
-                            package.PackageID = Packages_DB.AddPackage(package);
-                            this.DialogResult = DialogResult.OK;
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, ex.GetType().ToString());
+                            try
+                            {
+                                package.PackageID = Packages_DB.AddPackage(package);
+                                this.DialogResult = DialogResult.OK;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                            }
                         }
                     }
                 }
