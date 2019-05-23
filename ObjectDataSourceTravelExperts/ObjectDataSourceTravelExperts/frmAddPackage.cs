@@ -11,10 +11,12 @@ using TravelExpertsData;
 
 namespace ObjectDataSourceTravelExperts
 {
+    //Author: Lee Neufeld
+    // May/10/2019
     public partial class frmAddPackage : Form
     {
         public bool addPackage;
-        public Packages package; // current supplier
+        public Packages package; // current package
         public frmAddPackage()
         {
             InitializeComponent();
@@ -22,38 +24,107 @@ namespace ObjectDataSourceTravelExperts
 
         private void frmAddPackage_Load(object sender, EventArgs e)
         {
-            if (addPackage) // processing Add
-            {
-                package = new Packages();
-                this.putPackage(package);
 
-                try
+        }
+
+        private void putPackage(Packages package)
+        {
+            try
+            {
+                package.PkgName = txtPkgName.Text;
+                package.PkgStartDate = Convert.ToDateTime(txtDateStart.Text);
+                package.PkgEndDate = Convert.ToDateTime(txtDateEnd.Text);
+                package.PkgDesc = txtPkgDesc.Text;
+                package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
+                package.PkgAgencyCommission = Convert.ToDecimal(txtPkgCommission.Text);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private bool IsValidData()
+        {
+            return
+                Validator.IsPresent(txtPkgName) &&
+                Validator.IsPresent(txtPkgCommission) &&
+                Validator.IsPresent(txtPkgBasePrice) &&
+                Validator.IsPresent(txtPkgDesc) &&
+                Validator.IsPresent(txtDateEnd) &&
+                Validator.IsPresent(txtDateStart);
+        }
+        private bool isValidEndDate()
+        {
+            bool valid = true; // empty is valid
+            DateTime endDate;
+
+
+            if (txtDateStart.Text != "")// if not empty
+            {
+                if (DateTime.TryParse(txtDateEnd.Text, out endDate))//valid date
                 {
-                    package.PackageID = Packages_DB.AddPackage(package);
-                    this.DialogResult = DialogResult.OK;
+                    DateTime startDate = Convert.ToDateTime(txtDateStart.Text);
+
+                    if (startDate >= endDate)// start date is earlier than end date
+                    {
+                        valid = false;
+                        MessageBox.Show("Start date must be earlier than end date", "Data Error");
+
+                        txtDateStart.Focus();
+                    }
+
+
                 }
-                catch (Exception ex)
+
+            }
+            return valid;
+        }
+
+
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            if (isValidEndDate())
+            {
+                if (IsValidData())
                 {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    if (addPackage) // processing Add
+                    {
+                        package = new Packages();
+                        this.putPackage(package);
+
+                        try
+                        {
+                            package.PackageID = Packages_DB.AddPackage(package);
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, ex.GetType().ToString());
+                        }
+                    }
                 }
             }
         }
-    
-    private void putPackage(Packages package)
-    {
-            package.PkgName = txtPkgName.Text;
-            package.PkgStartDate = Convert.ToDateTime(txtDateStart.Text);
-            package.PkgEndDate = Convert.ToDateTime(txtDateEnd.Text);
-            package.PkgDesc = txtPkgCommission.Text;
-            package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
-            package.PkgAgencyCommission = Convert.ToDecimal(txtPkgCommission.Text);
-        
-        
-        
-        
-        
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
+        }
+
+        private void txtDateStart_ValueChanged(object sender, EventArgs e)
+        {
 
         }
-}
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPkgId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -35,17 +35,98 @@ namespace TravelExpertsData
                 }
             }
             return products;
-
         }
 
-        public static int AddProducts(Products products)
+        public static int AddProducts(Products prod)
         {
-            throw new NotImplementedException();
+            int prodID = 0;
+            // create connection
+            SqlConnection connection = TravelExperts_DB.GetConnection();
+            string insertStatement =
+                "INSERT INTO Products(ProductID, ProdName) " +
+                "VALUES(@ProductID, @ProdName)";
+            SqlCommand cmd = new SqlCommand(insertStatement, connection);
+            cmd.Parameters.AddWithValue("@ProductID", prod.ProductID);
+            cmd.Parameters.AddWithValue("@ProdName", prod.ProdName);
+            int count = 0;
+            try
+            {
+                connection.Open();
+                // execute insert command and get inserted ID
+                count = (int)cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return prodID;
         }
 
-        public static int UpdateProducts(Products products, Products oldProducts)
+        public static bool UpdateProducts(Products oldProd, Products newProd)
         {
-            throw new NotImplementedException();
+            bool success = false; // did not update
+
+            // connection
+            using (SqlConnection con = TravelExperts_DB.GetConnection())
+            // update command
+            {
+                string updateStatement =
+                  "UPDATE Products SET " +
+                  " ProdName = @NewProdName " + // Only Update ProductName
+                  "WHERE ProductID = @OldProductID "; //+" AND ProdName = @OldProdName";
+
+                using (SqlCommand cmd = new SqlCommand(updateStatement, con))
+                {
+                    cmd.Parameters.AddWithValue("@NewProdName", newProd.ProdName);
+                    cmd.Parameters.AddWithValue("@OldProductID", oldProd.ProductID);
+                    cmd.Parameters.AddWithValue("@OldProdName", oldProd.ProdName);
+
+                    con.Open();
+
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        success = true;
+                }
+            }
+            return success;
         }
+
+        //Created by Mohmaed to display all packages
+        public static DataTable GetAllPackages()
+
+        {
+            DataTable pkgtable = new DataTable();
+
+            SqlConnection conn = TravelExperts_DB.GetConnection();
+            conn.Open();
+            try
+            {
+              
+                string statement = "select s.SupName, pk.pkgname, " +
+                    "p.prodname from Suppliers s, Packages pk, " +
+                    "Packages_Products_Suppliers pps, Products_Suppliers ps, products p " +
+                    "where pk.PackageId = pps.PackageId and pps.ProductSupplierId = ps.ProductSupplierId " +
+                    "and ps.SupplierId = s.SupplierId and p.ProductId = ps.ProductId";
+                SqlCommand comm = new SqlCommand(statement, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(comm);
+                adapter.Fill(pkgtable);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { conn.Close(); }
+
+
+            return pkgtable;
+
+        }
+
+
     }
 }

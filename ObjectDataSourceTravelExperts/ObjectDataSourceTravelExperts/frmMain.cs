@@ -21,19 +21,16 @@ namespace ObjectDataSourceTravelExperts
         {
             InitializeComponent();
         }
-
         List<Packages> packages = null;
         List<Suppliers> suppliers = null;
         List<Products> products = null;
-
         public Suppliers supplier;
         Packages package;
-        public Products Products;
+        public Products product;
 
         private void frmMain_Load(object sender, EventArgs e)
-        {
-            
-            packages = Packages_DB.GetAllPackages();
+        {            
+            packages = Packages_DB.GetAllPackages();// completed by Lee Neufeld
             packagesDataGridView.DataSource = packages;
 
             //Suppliers 
@@ -41,9 +38,7 @@ namespace ObjectDataSourceTravelExperts
             suppliersDataGridView.DataSource = suppliers;
 
             products = Products_DB.GetProducts();
-            productsDataGridView.DataSource = products;
-
-
+            productsDataGridView.DataSource = products;                                 
         }
 
         private void suppliersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -68,13 +63,14 @@ namespace ObjectDataSourceTravelExperts
             }
         }
 
+        // completed by Lee Neufeld
         private void packagesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == EDIT_PACKAGES_INDX)// user click in the buttons column
             {
-                //oldCustomer = customers[e.RowIndex].Clone(); // copy of current customer
+                
                 frmPackageUpdate updateForm = new frmPackageUpdate();
-                updateForm.package = packages[e.RowIndex];// pass current customer to the update form
+                updateForm.package = packages[e.RowIndex];// pass current package to the update form
                 DialogResult result = updateForm.ShowDialog(); // display modal
                 if (result == DialogResult.OK)// update accepted
                 {
@@ -84,7 +80,7 @@ namespace ObjectDataSourceTravelExperts
                 }
                 else // update cancelled
                 {
-                    //customers[e.RowIndex] = oldCustomer;
+                    
                     packages = Packages_DB.GetAllPackages();
                     packagesDataGridView.DataSource = packages;
                 }
@@ -128,8 +124,7 @@ namespace ObjectDataSourceTravelExperts
             DialogResult result = addProductForm.ShowDialog();
             if (result == DialogResult.OK)
             {
-                products = addProductForm.products;
-               
+                product = addProductForm.products;
             }
         }
 
@@ -137,7 +132,7 @@ namespace ObjectDataSourceTravelExperts
         {
             if (e.ColumnIndex == EDIT_PRODUCTS_INDEX)
             {
-                frmSuppliersUpdate updateProductsForm = new frmSuppliersUpdate();
+                frmProductsUpdate updateProductsForm = new frmProductsUpdate();
                 updateProductsForm.products = products[e.RowIndex];// pass current customer to the update form
                 DialogResult result = updateProductsForm.ShowDialog(); // display modal
 
@@ -153,5 +148,30 @@ namespace ObjectDataSourceTravelExperts
                 }
             }
         }
+
+
+        // Mohamed: This button should refresh tables on the main form, Mohamed 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            frmMain_Load(btnRefresh, null);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLink_Click(object sender, EventArgs e)
+        {
+            frmReports repo = new frmReports();
+            repo.Show();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+   

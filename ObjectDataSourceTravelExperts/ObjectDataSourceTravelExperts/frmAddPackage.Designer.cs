@@ -42,14 +42,14 @@
             this.txtPkgName = new System.Windows.Forms.TextBox();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtDateStart = new System.Windows.Forms.TextBox();
-            this.txtDateEnd = new System.Windows.Forms.TextBox();
+            this.txtDateStart = new System.Windows.Forms.DateTimePicker();
+            this.txtDateEnd = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 53);
+            this.label1.Location = new System.Drawing.Point(12, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
@@ -58,7 +58,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 95);
+            this.label2.Location = new System.Drawing.Point(12, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 13);
             this.label2.TabIndex = 1;
@@ -67,7 +67,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 129);
+            this.label3.Location = new System.Drawing.Point(12, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 2;
@@ -76,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 154);
+            this.label4.Location = new System.Drawing.Point(12, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 3;
@@ -85,16 +85,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 182);
+            this.label5.Location = new System.Drawing.Point(12, 219);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.Size = new System.Drawing.Size(158, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Pkg Start Date";
+            this.label5.Text = "Pkg Start Date (YYYY/MM/DD)";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(50, 213);
+            this.label6.Location = new System.Drawing.Point(12, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 5;
@@ -103,11 +104,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(50, 242);
+            this.label7.Location = new System.Drawing.Point(12, 242);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.Size = new System.Drawing.Size(155, 13);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Pkg End Date:";
+            this.label7.Text = "Pkg End Date(YYYY/MM/DD):";
             // 
             // txtPkgId
             // 
@@ -116,6 +117,7 @@
             this.txtPkgId.Name = "txtPkgId";
             this.txtPkgId.Size = new System.Drawing.Size(200, 20);
             this.txtPkgId.TabIndex = 7;
+            this.txtPkgId.TextChanged += new System.EventHandler(this.txtPkgId_TextChanged);
             // 
             // txtPkgCommission
             // 
@@ -140,9 +142,9 @@
             // 
             // txtPkgName
             // 
-            this.txtPkgName.Location = new System.Drawing.Point(182, 206);
+            this.txtPkgName.Location = new System.Drawing.Point(182, 188);
             this.txtPkgName.Name = "txtPkgName";
-            this.txtPkgName.Size = new System.Drawing.Size(197, 20);
+            this.txtPkgName.Size = new System.Drawing.Size(200, 20);
             this.txtPkgName.TabIndex = 11;
             // 
             // btnAccept
@@ -153,6 +155,7 @@
             this.btnAccept.TabIndex = 14;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnCancel
             // 
@@ -162,26 +165,30 @@
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtDateStart
             // 
-            this.txtDateStart.Location = new System.Drawing.Point(182, 177);
+            this.txtDateStart.Location = new System.Drawing.Point(182, 217);
             this.txtDateStart.Name = "txtDateStart";
             this.txtDateStart.Size = new System.Drawing.Size(200, 20);
-            this.txtDateStart.TabIndex = 16;
+            this.txtDateStart.TabIndex = 18;
+            this.txtDateStart.Tag = "Start Date";
+            this.txtDateStart.ValueChanged += new System.EventHandler(this.txtDateStart_ValueChanged);
             // 
             // txtDateEnd
             // 
-            this.txtDateEnd.Location = new System.Drawing.Point(179, 239);
+            this.txtDateEnd.AllowDrop = true;
+            this.txtDateEnd.Location = new System.Drawing.Point(182, 242);
             this.txtDateEnd.Name = "txtDateEnd";
             this.txtDateEnd.Size = new System.Drawing.Size(200, 20);
-            this.txtDateEnd.TabIndex = 17;
+            this.txtDateEnd.TabIndex = 19;
             // 
             // frmAddPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 337);
+            this.ClientSize = new System.Drawing.Size(409, 339);
             this.Controls.Add(this.txtDateEnd);
             this.Controls.Add(this.txtDateStart);
             this.Controls.Add(this.btnCancel);
@@ -199,7 +206,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddPackage";
-            this.Text = "frmAddPackage";
+            this.Text = "Add Package";
             this.Load += new System.EventHandler(this.frmAddPackage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -222,7 +229,7 @@
         private System.Windows.Forms.TextBox txtPkgName;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtDateStart;
-        private System.Windows.Forms.TextBox txtDateEnd;
+        private System.Windows.Forms.DateTimePicker txtDateStart;
+        private System.Windows.Forms.DateTimePicker txtDateEnd;
     }
 }
